@@ -1,0 +1,564 @@
+{
+  "ckpt_step": 2805,
+  "params": 2675712,
+  "sets": {
+    "val": {
+      "n": 500,
+      "steps": 1727,
+      "step_acc": 0.9682,
+      "episode_exact": 0.902,
+      "first_call": 0.956,
+      "json_valid": 0.9988,
+      "failures": [
+        {
+          "input": "the main text, the haedings of urc table",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\",\"images\"]}",
+          "after": "ok 200 text:219 links:1414 images:162 tables:0"
+        },
+        {
+          "input": "Hi, find title, titles of the sections of air fryer price",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"title\",\"headings\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"links\"]}",
+          "after": "ok 200 text:31 links:1859 images:177 tables:0"
+        },
+        {
+          "input": "yo hit http://ocean.com.br/posts and scrape all prodcut images,the h2s for me",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"images\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"text\",\"images\"]}",
+          "after": "ok 200 text:453 links:0 images:71 tables:2"
+        },
+        {
+          "input": "madrid upblic holidays right now please for me",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"madrid public holidays\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"madrip noweather\"}",
+          "after": null
+        },
+        {
+          "input": "hey bread.co.za/help/queen/ all the info",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://bread.co.za/help/queen/\"}",
+          "got": "{\"tool\":\"fail\",\"reason\":\"out_of_scope\"}",
+          "after": null
+        },
+        {
+          "input": "ok look up afcon results and give me page text, meta description, and page name",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"title\",\"meta\",\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"text\"]}",
+          "after": "ok 200 text:550 links:0 images:141 tables:0"
+        },
+        {
+          "input": "whats otubound links for dumo.fr/pricing/sunny?",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"dumo.fr\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "after": "ok 200 text:173 links:0 images:150 tables:2"
+        },
+        {
+          "input": "so there's this page i need and task: fetch all body copy + the meta tags from docs.happy.co.za/w/Flow now",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"text\",\"links\"]}",
+          "after": "ok 200 text:383 links:1818 images:104 tables:2"
+        },
+        {
+          "input": "hey running shoes reviews data tables",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"tables\"]}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://www.white552hub.ai/latest/\"}",
+          "after": "ok 200 text:0 links:484 images:63 tables:2"
+        },
+        {
+          "input": "task: what's afcon live scores pls",
+          "step": 5,
+          "expected": "{\"tool\":\"fail\",\"reason\":\"not_found\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://www.livedaily.ac.za/item?id=841566\"}",
+          "after": "error blocked"
+        },
+        {
+          "input": "navigate to help.sync.fr/@forge69/west-49737 and collect seo info, wording, and h1 and h2 tags please",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"headings\",\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"text\"]}",
+          "after": "ok 203 text:897 links:3 images:161 tables:0"
+        },
+        {
+          "input": "please tell me site title of http://powu.net/kucelu-pizza-forest-8966-2008-nikezuse/iVv2D/ea30659a50b0cf1d/InkWater/IRZTBU/ now",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"http://powu.net/kucelu-pizza-forest-8966-2008-nikezuse/iVv2D/ea30659a50b0cf1d/InkWater/IRZTBU/\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"http://powu.net/kucelu-pizza-forest-8966-2008-nikezuse/iVv2D/ea30659a50b0cf1d/INkWater/IRZTBU/\"}",
+          "after": null
+        },
+        {
+          "input": "Quick one: need copyt/he h2s from https://news.ycombinator.com",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"text\",\"images\"]}",
+          "after": "ok 203 text:476 links:1118 images:165 tables:2"
+        },
+        {
+          "input": "quick favour - hey super rugby scheduel links?",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\",\"links\"]}",
+          "after": "ok 200 text:154 links:1492 images:124 tables:0"
+        },
+        {
+          "input": "go to https://vuzege.biz/help and get the footer links and table data asap",
+          "step": 3,
+          "expected": "{\"tool\":\"search\",\"q\":\"vuzege.biz\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\",\"tables\"]}",
+          "after": "ok 200 text:744 links:0 images:162 tables:0"
+        },
+        {
+          "input": "puppeteer: open family734.fr/O8GUVFBI2IKZ/voice-stone-storm-nanawa-bread-876-9751-5839/69Z594863NG/?src=Football%20Moon and get the headers :)",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"family734.fr\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\"]}",
+          "after": "ok 200 text:0 links:1060 images:48 tables:0"
+        },
+        {
+          "input": "look up wimbledon schedule and give me all ttile, the table data and pictures",
+          "step": 4,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://wimbledon.web.za/fixtures\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"title\",\"images\",\"tables\"]}",
+          "after": "ok 200 text:577 links:407 images:0 tables:0"
+        },
+        {
+          "input": "hey crypto reviews links.",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "after": "ok 200 text:416 links:1278 images:133 tables:0"
+        },
+        {
+          "input": "scout, the subheadings & the image urls about goolge updates?",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"google updates\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"goolge updates\"}",
+          "after": null
+        },
+        {
+          "input": "pics in nodejs.org/EQ6BXYG/36Q930SPLGSA/b6b0766fda0164/54NYX5Y6/4001-9178-fapidasi-6922-gazu-cupodi-tosezadu-susi.aspx please",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://nodejs.org/EQ6BXYG/36Q930SPLGSA/b6b0766fda0164/54NYX5Y6/4001-9178-fapidasi-6922-gazu-cupodi-tosezadu-susi.aspx\"}",
+          "got": "{\"tool\":\"fail\",\"reason\":\"out_of_scope\"}",
+          "after": null
+        },
+        {
+          "input": "ok so i'm building a price tracker and basically what i need is for you to github microsoft/tpyescript readme for me",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/microsoft/typescript\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/microsoft/tpyescript\"}",
+          "after": null
+        },
+        {
+          "input": "quick favour - please The Beatles wiki page?",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/The_Beatles\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/Bitcoin\"}",
+          "after": null
+        },
+        {
+          "input": "SCOUT, THE INFO FROM https://HEALTH.ORG.UK/jobs/ THX",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"health.org.uk\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"all\"]}",
+          "after": "ok 200 text:0 links:456 images:72 tables:0"
+        },
+        {
+          "input": "SCOUT, GRAB ALL SECTINO TITLES OFF NEWS24.COM/JRMV.EPXVD.GWA.FG?start=_&view=YaGy26&q=kit.",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://news24.com/JRMV.EPXVD.GWA.FG?start=_&view=YaGy26&q=kit\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://news24.com/jrmv.epxVd.GWa.Fg?start=_&view=YaGy26&q=kit\"}",
+          "after": null
+        },
+        {
+          "input": "tech.dev/docs/rain - give me a summary of the page",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://tech.dev/docs/rain\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://dev/docen/rain\"}",
+          "after": null
+        }
+      ],
+      "ms_per_step": 108.07
+    },
+    "unseen topics": {
+      "n": 600,
+      "steps": 2066,
+      "step_acc": 0.7943,
+      "episode_exact": 0.3883,
+      "first_call": 0.4167,
+      "json_valid": 0.9976,
+      "failures": [
+        {
+          "input": "scou,t get h1 and h2 tags for anthropic blog posst?",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"anthropic blog posts\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"ancirost blog\"}",
+          "after": null
+        },
+        {
+          "input": "plaese  github anthropics/anthropic-sdk-python readme!",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/anthropics/anthropic-sdk-python\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/nenthon/progrct\"}",
+          "after": null
+        },
+        {
+          "input": "grab amazon stock forecast for me now so i can paste it into excel",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"amazon stock forecast\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"amazon stock faster\"}",
+          "after": null
+        },
+        {
+          "input": "Quick one: the pypi page for polars.",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://pypi.org/project/polars/\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://pypi.org/project/python/\"}",
+          "after": null
+        },
+        {
+          "input": "quick favour - ok check tomorrow big bash match report",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"big bash match report tomorrow\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"big bash results tomorrow\"}",
+          "after": null
+        },
+        {
+          "input": "The title tag for anthropic rumours :)",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"anthropic rumours\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"anther pronfo urmban\"}",
+          "after": null
+        },
+        {
+          "input": "search for tonight platinum forecast",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"platinum forecast today\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"platinum fixtures today\"}",
+          "after": null
+        },
+        {
+          "input": "hi, the olympics rumours the description tag thanks",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"the olympics rumours\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"things rumfrice\"}",
+          "after": null
+        },
+        {
+          "input": "hi, find a tags of e-bike ratings pls",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"e-bike ratings\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"ethereutings price\"}",
+          "after": null
+        },
+        {
+          "input": "Task: the title tag on puffin727.gov.uk/list?tundra=raven&page=36? :)",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"title\"]}",
+          "got": "{\"tool\":\"search\",\"q\":\"puffin727.gov.uk\"}",
+          "after": "ok 200 text:0 links:2184 images:127 tables:0"
+        },
+        {
+          "input": "hey the pypi page for uv :)",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://pypi.org/project/uv/\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://pypi.org/project/upppates/\"}",
+          "after": null
+        },
+        {
+          "input": "task: anthropics/anthropic-sdk-python on github :)",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/anthropics/anthropic-sdk-python\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/nothon/odenthess\"}",
+          "after": null
+        },
+        {
+          "input": "task: anthropics/anthropic-sdk-python on github :)",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"anthropics/anthropic-sdk-python github\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"anthropychonpi github\"}",
+          "after": "error blocked"
+        },
+        {
+          "input": "search wikipedia for aKlahari",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/Kalahari\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/AKruger_national_park\"}",
+          "after": null
+        },
+        {
+          "input": "search wikipedia for aKlahari",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"Kalahari wikipedia\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"karge wikipedia\"}",
+          "after": "error blocked"
+        },
+        {
+          "input": "quick favour - yo example.com/N-LxkHxUk/63322808/0XvkW0QmJPiix9/Tundra/wecemi-raven-4101",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://example.com/N-LxkHxUk/63322808/0XvkW0QmJPiix9/Tundra/wecemi-raven-4101\"}",
+          "got": "{\"tool\":\"fail\",\"reason\":\"out_of_scope\"}",
+          "after": null
+        },
+        {
+          "input": "the photos,link list from the github repo karpathy/llm.c pls",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/karpathy/llm.c\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/karpathy/llm\"}",
+          "after": null
+        },
+        {
+          "input": "grab the product images for anthropic blog posts from the web!",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"anthropic blog posts\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"anther in blog\"}",
+          "after": null
+        },
+        {
+          "input": "open  github ollama/ollama thx",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/ollama/ollama\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/openai/whlama/loma\"}",
+          "after": null
+        },
+        {
+          "input": "hey find out tongiht windhoek surnise time",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"windhoek sunrise time today\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"withon wikipedia\"}",
+          "after": null
+        },
+        {
+          "input": "Scout, i want og tags of coppa italia line-ups",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"coppa italia line-ups\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"copa ai line lines\"}",
+          "after": null
+        },
+        {
+          "input": "fetch coppa italia line-ups",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"coppa italia line-ups\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"coppa aila lines\"}",
+          "after": null
+        },
+        {
+          "input": "please all title tag of the wikipedia article about kalahari for me",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/Kalahari\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/Kruger_national_park\"}",
+          "after": null
+        },
+        {
+          "input": "hi, get link urls for e-bike ratings so i can paste it into excel",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"e-bike ratings\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"ether atings scores\"}",
+          "after": null
+        },
+        {
+          "input": "search robot vacumu discounts and get footer linsk.",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"robot vacuum discounts\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"robout vacumfic\"}",
+          "after": null
+        }
+      ],
+      "ms_per_step": 106.57
+    },
+    "unseen phrasings": {
+      "n": 600,
+      "steps": 2069,
+      "step_acc": 0.9217,
+      "episode_exact": 0.755,
+      "first_call": 0.8367,
+      "json_valid": 0.999,
+      "failures": [
+        {
+          "input": "yo gather up link addressse at 'farm.com/7PsE68/TY6ET9LB8P4.pdf'",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"farm.com\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "after": "ok 200 text:309 links:0 images:184 tables:0"
+        },
+        {
+          "input": "please bring me nvdiia reviews?",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"nvidia reviews\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"bernet mes\"}",
+          "after": null
+        },
+        {
+          "input": "please bring me space x updates",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"space x updates\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"bernetes updates\"}",
+          "after": null
+        },
+        {
+          "input": "OK REPORT UFC RESULTS THANKS FOR MY REPORT",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"ufc results\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"results to schres\"}",
+          "after": null
+        },
+        {
+          "input": "please point the browsre at pure935.gov.au/@pure75/storm-76065 and bring back all information!",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://pure935.gov.au/@pure75/storm-76065\"}",
+          "got": "{\"tool\":\"fail\",\"reason\":\"out_of_scope\"}",
+          "after": null
+        },
+        {
+          "input": "please point the browsre at pure935.gov.au/@pure75/storm-76065 and bring back all information!",
+          "step": 6,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://news.pure935.de/gov/team\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://www.pure935.de/gov/team\"}",
+          "after": "error 404"
+        },
+        {
+          "input": "scout, would you mind fetching every bit of data that city.co.za/filu-design-8335-learn/maker-81840/kasuhuco-space-jezu-9467-voge-9962/L2QEOSJ/seloto-cape-smart-8859-4903-zetejuge-1657-earth-build has",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://city.co.za/filu-design-8335-learn/maker-81840/kasuhuco-space-jezu-9467-voge-9962/L2QEOSJ/seloto-cape-smart-8859-4903-zetejuge-1657-earth-build\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://city.co.za/filu-design-8335-learn/maker-81840/kasuhuco-space-jezu-9467-voge-9962/L2QEOSJ/seloto-cape-smart-8859-4903-zetejuge-1657",
+          "after": null
+        },
+        {
+          "input": "QUICK ONE: I'M AFTER URLS, TITLE, PICTURES, SITE IS news.farm468.com/uYuv/N-TqgRII1/6720-tuzukaca-7977-print-2863-ink-8533-forest-stone/BD02P95WG99/!",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://news.farm468.com/uYuv/N-TqgRII1/6720-tuzukaca-7977-print-2863-ink-8533-forest-stone/BD02P95WG99/\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://snews.farm468.com/uYuv/N-TqgRII1/6720-tuzukaca-7977-print-2863-forest-stone/BD02P95WG99/\"}",
+          "after": null
+        },
+        {
+          "input": "task: hunt down jse top 40 news",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"jse top 40 news\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"downes jse top 40\"}",
+          "after": null
+        },
+        {
+          "input": "hunt down petrol news thx because i need it for a meeting",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"petrol news\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"downepetrol news\"}",
+          "after": null
+        },
+        {
+          "input": "MY BOSS ASKED ME TO LOOK INTO COMPETITORS, SO COULD YOU PLEASE play.edu/posts/zen.php -> A FULL EXTRACTION",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://play.edu/posts/zen.php\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://please.edu/posts/zen.php\"}",
+          "after": null
+        },
+        {
+          "input": "my boss asked me to look into competitors, so could you please would you mind fetching headings, data atbles, meta info that lemon789.com.au/search has pls",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://lemon789.com.au/search\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://that789.com.au/search\"}",
+          "after": null
+        },
+        {
+          "input": "my boss asked me to look into competitors, so could you please would you mind fetching headings, data atbles, meta info that lemon789.com.au/search has pls",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"headings\",\"tables\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"tables\"]}",
+          "after": "ok 200 text:166 links:0 images:54 tables:1"
+        },
+        {
+          "input": "hi, summarize http://m.news.co.in/posts for me for me",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"http://m.news.co.in/posts\"}",
+          "got": "{\"tool\":\"fail\",\"reason\":\"out_of_scope\"}",
+          "after": null
+        },
+        {
+          "input": "hi, hackre news headlines :)",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\"]}",
+          "after": "ok 200 text:515 links:1024 images:28 tables:0"
+        },
+        {
+          "input": "scan KING.INFO/smart%20post, report all words on page & the title tag thx",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://king.info/smart%20post\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://page.info/smart%20post\"}",
+          "after": null
+        },
+        {
+          "input": "news.games.de -> title+links",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"title\",\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "after": "ok 200 text:665 links:2384 images:145 tables:0"
+        },
+        {
+          "input": "Scout, hacker news headlines",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\"]}",
+          "after": "ok 200 text:41 links:2399 images:138 tables:0"
+        },
+        {
+          "input": "QUICK ONE: GATHER UP TEXT + THUMBNAILS + TABULAR DATA AT python.org/products PLS",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://python.org/products\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://techogy.nproduct/products\"}",
+          "after": null
+        },
+        {
+          "input": "QUICK ONE: GATHER UP TEXT + THUMBNAILS + TABULAR DATA AT python.org/products PLS",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"text\",\"images\",\"tables\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"tables\"]}",
+          "after": "ok 203 text:855 links:115 images:169 tables:1"
+        },
+        {
+          "input": "TASK: WOULD YOU MIND FETCHING PARAGRAPHS THAT CLASS.GOV.ZA/EW.PH.NSP/9285-alpha-bank-labegiwo/YZGNZ.RX.AQ/b1cdab1f/sport-37690.html HAS THANKS (I'LL CHECK IT LATER)",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://class.gov.za/EW.PH.NSP/9285-alpha-bank-labegiwo/YZGNZ.RX.AQ/b1cdab1f/sport-37690.html\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://class.gov.za/EW.ph.nsp/9285-alpha-bank-labegiwo/YZGNZ.RX.AQ/b1cdab1f/sport-37690.html\"}",
+          "after": null
+        },
+        {
+          "input": "quick one: hacker news headlines",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\"]}",
+          "after": "ok 200 text:435 links:185 images:0 tables:0"
+        },
+        {
+          "input": "i keep doing this by hand and it takes forever, so please ok bring me latest restaurants in madrid thx",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"restaurants in madrid\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"madrid mes\"}",
+          "after": null
+        },
+        {
+          "input": "bring me ufc standings",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"ufc standings\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"bernet meds\"}",
+          "after": null
+        },
+        {
+          "input": "hey hacker news headlines thx",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\"]}",
+          "after": "ok 200 text:745 links:1643 images:89 tables:2"
+        }
+      ],
+      "ms_per_step": 97.09
+    }
+  }
+}

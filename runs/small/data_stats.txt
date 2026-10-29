@@ -1,0 +1,13 @@
+{"train": 200000, "val": 1797, "test_unseen_domains": 1000, "test_unseen_phrasings": 1000, "seed": 1337, "max_input_chars": 150, "train_contains_example": false}
+quick one: head to talklake.info/careers/6416 and pull the contents for me => {"url":"https://talklake.info/careers/6416","extract":["all"]}
+hey can you scrape the contents from a website => {"error":"no_url"}
+quick one: crawl https://mehuwuha.tech. => {"url":"https://mehuwuha.tech","extract":["all"]}
+hey navigate to music.biz, extract all the info => {"url":"https://music.biz","extract":["all"]}
+please scrape https://app.sevunabu.fr/home/storm for all metadata and outbound links => {"url":"https://app.sevunabu.fr/home/storm","extract":["meta","links"]}
+agent, go on 'https://field.gov/news/hire.php' and fetch page name => {"url":"https://field.gov/news/hire.php","extract":["title"]}
+yo head to news.fitness84.online and pull a summayr of the page thx => {"url":"https://news.fitness84.online","extract":["all"]}
+Ok open up pure.io for me => {"url":"https://pure.io","extract":["all"]}
+hey, scrape https://app.hire.ai/home and return meta tags => {"url":"https://app.hire.ai/home","extract":["meta"]}
+Scout, email bob@cowo.org the report pls => {"error":"out_of_scope"}
+hit link.de and scrape the meta description please => {"url":"https://link.de","extract":["meta"]}
+head to https://shop.apple.org/docs and pull the contents please => {"url":"https://shop.apple.org/docs","extract":["all"]}

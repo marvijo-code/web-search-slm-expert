@@ -1,0 +1,30 @@
+{
+ "train": 200000,
+ "val": 1500,
+ "test_unseen_topics": 600,
+ "test_unseen_phrasings": 600,
+ "seed": 4242,
+ "copy": 0.3,
+ "mix": 0.5,
+ "typo": 0.15,
+ "kinds": {
+  "search": 75866,
+  "url": 63689,
+  "no_target": 9217,
+  "scope": 10590,
+  "recipe": 40638
+ },
+ "episodes_with_a_failure": 0.189,
+ "seq_len_median": 296,
+ "seq_len_p99": 670,
+ "seq_len_max": 768,
+ "calls_per_episode": 3.46
+}
+what's nba hevabe kdfw. <sep> {"tool":"search","q":"nba hevabe kdfw"} <eos> results 1 https://happy-bread.de/fixtures 2 https://news.hevabe.com.au/sport/nba-kdfw 3 https://nba.uk/story/256148 <sep> {"tool":"goto","url":"https://happy-bread.de/fixtures"} <eos> ok 200 text:518 links:1552 images:163 tables:1 <sep> {"tool":"extract","fields":["text"]} <eos> got text:518 <sep> {"tool":"done"} <eos> 
+please what are the office chair price latest <sep> {"tool":"search","q":"office chair price"} <eos> results 1 https://sport.post.edu/chair-office/menu 2 https://news.chairzone.io/live/ 3 https://hill-paper.xyz/markets/price-office/ <sep> {"tool":"goto","url":"https://sport.post.edu/chair-office/menu"} <eos> ok 200 text:693 links:976 images:0 tables:0 <sep> {"tool":"extract","fields":["text"]} <eos> got text:693 <sep> {"tool":"done"} <eos> 
+quick  favour - ok whats the meta info for golden955.co.za/products <sep> {"tool":"goto","url":"https://golden955.co.za/products"} <eos> ok 200 text:378 links:1796 images:114 tables:0 <sep> {"tool":"extract","fields":["meta"]} <eos> got meta <sep> {"tool":"done"} <eos> 
+quick one: get me all the info on <www.wind-maple.com/7IKFHLR7/2ff317/e8c92637e/football-20022#ef5aa370> <sep> {"tool":"goto","url":"https://www.wind-maple.com/7IKFHLR7/2ff317/e8c92637e/football-20022#ef5aa370"} <eos> ok 200 text:667 links:1781 images:0 tables:4 <sep> {"tool":"extract","fields":["all"]} <eos> got headings:60 text:667 links:1781 images:0 tables:4 <sep> {"tool":"done"} <eos> 
+go to the url and give me the site contents <sep> {"tool":"fail","reason":"no_target"} <eos> 
+pelase look at coji.co.nz/contact and give me just all seo tags for me <sep> {"tool":"goto","url":"https://coji.co.nz/contact"} <eos> ok 200 text:783 links:2014 images:44 tables:0 <sep> {"tool":"extract","fields":["meta"]} <eos> got meta <sep> {"tool":"done"} <eos> 
+pay my elecrticity bill now <sep> {"tool":"fail","reason":"out_of_scope"} <eos> 
+ok hacker news today asap <sep> {"tool":"goto","url":"https://news.ycombinator.com/"} <eos> ok 200 text:145 links:2016 images:13 tables:50 <sep> {"tool":"extract","fields":["links"]} <eos> got links:2016 <sep> {"tool":"done"} <eos> 

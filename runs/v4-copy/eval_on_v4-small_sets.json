@@ -1,0 +1,564 @@
+{
+  "ckpt_step": 3140,
+  "params": 2675712,
+  "sets": {
+    "val": {
+      "n": 500,
+      "steps": 1727,
+      "step_acc": 0.9612,
+      "episode_exact": 0.876,
+      "first_call": 0.938,
+      "json_valid": 0.9994,
+      "failures": [
+        {
+          "input": "agent, use puppeteer to find tomorrow weather in lsibon",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"weather in lisbon tomorrow\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"weather in lsibon tomorrow\"}",
+          "after": null
+        },
+        {
+          "input": "Ok open github rust-lan/grust now",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/rust-lang/rust\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/rust-lan/grust\"}",
+          "after": null
+        },
+        {
+          "input": "task: paragraphs and seo tags about nvidia headlines for me",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"headings\"]}",
+          "after": "ok 203 text:631 links:0 images:89 tables:33"
+        },
+        {
+          "input": "Ok give me yesterday load shedding in amsterdam for me",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"load shedding in amsterdam yesterday\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"load shedding in amsterdam yesterdam yesterdamm yesterdam\"}",
+          "after": null
+        },
+        {
+          "input": "Ok give me yesterday load shedding in amsterdam for me",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"text\"],\"find\":\"yesterday\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "after": "ok 200 text:288 links:1746 images:29 tables:2"
+        },
+        {
+          "input": "madrid upblic holidays right now please for me",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"madrid public holidays\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"madrid upblic holidays\"}",
+          "after": null
+        },
+        {
+          "input": "hi, tonight toronto traffic now",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"toronto traffic today\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"toronto traffic\"}",
+          "after": null
+        },
+        {
+          "input": "whats otubound links for dumo.fr/pricing/sunny?",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"dumo.fr\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "after": "ok 200 text:173 links:0 images:150 tables:2"
+        },
+        {
+          "input": "hey https://nytimes.com/page/Zone_Wave - get the link list, the text, and the og tags pls",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://nytimes.com/page/Zone_Wave\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://nytimes.com/page/Zone_Wave_Wave\"}",
+          "after": null
+        },
+        {
+          "input": "SCOUT, TELL ME TOMORRWO'S RESTARUANTS IN ROME :)",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"restaurants in rome tomorrow\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"restaruants in rome tomorrow\"}",
+          "after": null
+        },
+        {
+          "input": "navigate to help.sync.fr/@forge69/west-49737 and collect seo info, wording, and h1 and h2 tags please",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"headings\",\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\",\"text\"]}",
+          "after": "ok 203 text:897 links:3 images:161 tables:0"
+        },
+        {
+          "input": "browse the web for tomorrow's gbp to zar news :)",
+          "step": 6,
+          "expected": "{\"tool\":\"fail\",\"reason\":\"not_found\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://m.quickbooks.com.au/live\"}",
+          "after": "got text:0"
+        },
+        {
+          "input": "agent, scrape page SUNLEMON.UK thanks",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://sunlemon.uk\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://sunkemon.uk\"}",
+          "after": null
+        },
+        {
+          "input": "quick favour - hey super rugby scheduel links?",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "after": "ok 200 text:154 links:1492 images:124 tables:0"
+        },
+        {
+          "input": "Yo open https://blog.campus757.biz/pricing/smart and extract text thx",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"blog.campus757.biz\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "after": "ok 200 text:0 links:0 images:133 tables:0"
+        },
+        {
+          "input": "go to https://vuzege.biz/help and get the footer links and table data asap",
+          "step": 3,
+          "expected": "{\"tool\":\"search\",\"q\":\"vuzege.biz\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\",\"tables\"]}",
+          "after": "ok 200 text:744 links:0 images:162 tables:0"
+        },
+        {
+          "input": "go to https://vuzege.biz/help and get the footer links and table data asap",
+          "step": 6,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://news.bay.co.nz/biz.html\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://king526central.me/news\"}",
+          "after": "error timeout"
+        },
+        {
+          "input": "puppeteer: open family734.fr/O8GUVFBI2IKZ/voice-stone-storm-nanawa-bread-876-9751-5839/69Z594863NG/?src=Football%20Moon and get the headers :)",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"family734.fr\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"headings\"]}",
+          "after": "ok 200 text:0 links:1060 images:48 tables:0"
+        },
+        {
+          "input": "look up wimbledon schedule and give me all ttile, the table data and pictures",
+          "step": 4,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://wimbledon.web.za/fixtures\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"title\",\"images\",\"tables\"]}",
+          "after": "ok 200 text:577 links:407 images:0 tables:0"
+        },
+        {
+          "input": "hey crypto reviews links.",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "after": "ok 200 text:416 links:1278 images:133 tables:0"
+        },
+        {
+          "input": "scout, the subheadings & the image urls about goolge updates?",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"google updates\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"goolge updates\"}",
+          "after": null
+        },
+        {
+          "input": "hey search carabao cup standings and get all the links thanks",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\",\"tables\"]}",
+          "after": "ok 200 text:625 links:1414 images:120 tables:2"
+        },
+        {
+          "input": "pics in nodejs.org/EQ6BXYG/36Q930SPLGSA/b6b0766fda0164/54NYX5Y6/4001-9178-fapidasi-6922-gazu-cupodi-tosezadu-susi.aspx please",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://nodejs.org/EQ6BXYG/36Q930SPLGSA/b6b0766fda0164/54NYX5Y6/4001-9178-fapidasi-6922-gazu-cupodi-tosezadu-susi.aspx\"}",
+          "got": "{\"tool\":\"fail\",\"reason\":\"out_of_scope\"}",
+          "after": null
+        },
+        {
+          "input": "hey search for recetn jobs in rome",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"jobs in rome\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"receren jobs\"}",
+          "after": null
+        },
+        {
+          "input": "ok so i'm building a price tracker and basically what i need is for you to github microsoft/tpyescript readme for me",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/microsoft/typescript\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/microsoft/tpyescript\"}",
+          "after": null
+        }
+      ],
+      "ms_per_step": 94.02
+    },
+    "unseen topics": {
+      "n": 600,
+      "steps": 2066,
+      "step_acc": 0.8964,
+      "episode_exact": 0.6817,
+      "first_call": 0.7467,
+      "json_valid": 0.9981,
+      "failures": [
+        {
+          "input": "scou,t get h1 and h2 tags for anthropic blog posst?",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"anthropic blog posts\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"anthopic blog\"}",
+          "after": null
+        },
+        {
+          "input": "plaese  github anthropics/anthropic-sdk-python readme!",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/anthropics/anthropic-sdk-python\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/anthropic-sdk-python\"}",
+          "after": null
+        },
+        {
+          "input": "The title tag for anthropic rumours :)",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"anthropic rumours\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"antheropic rumours today\"}",
+          "after": null
+        },
+        {
+          "input": "search for tonight platinum forecast",
+          "step": 6,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://todayonline.edu/today-platinum\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://today-platinum\"}",
+          "after": "got text:0"
+        },
+        {
+          "input": "hi, the olympics rumours the description tag thanks",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"the olympics rumours\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"the olympics\"}",
+          "after": null
+        },
+        {
+          "input": "hi, the olympics rumours the description tag thanks",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"images\"]}",
+          "after": "ok 200 text:455 links:41 images:0 tables:0"
+        },
+        {
+          "input": "task: anthropics/anthropic-sdk-python on github :)",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/anthropics/anthropic-sdk-python\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/anthropic-sdk-python\"}",
+          "after": null
+        },
+        {
+          "input": "search wikipedia for aKlahari",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/Kalahari\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/AKlahari\"}",
+          "after": null
+        },
+        {
+          "input": "the photos,link list from the github repo karpathy/llm.c pls",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://github.com/karpathy/llm.c\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://github.com/karpathy/llm.com/\"}",
+          "after": null
+        },
+        {
+          "input": "the photos,link list from the github repo karpathy/llm.c pls",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"images\",\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\",\"images\"]}",
+          "after": "ok 200 text:473 links:1294 images:83 tables:0"
+        },
+        {
+          "input": "grab the product images for anthropic blog posts from the web!",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"anthropic blog posts\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"anthopic blog\"}",
+          "after": null
+        },
+        {
+          "input": "hey find out tongiht windhoek surnise time",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"windhoek sunrise time today\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"windhoek suranie time time time time timer timel timel timel timel timel timel timel\"}",
+          "after": null
+        },
+        {
+          "input": "hey find out tongiht windhoek surnise time",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"text\"],\"find\":\"today\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"title\"],\"text\"],\"find\":[\"text\"],\"dings\"],\"dings\"],\"dings\"],\"dinks\"],\"dinks\"],\"text\"],\"find\":[\"text\"],\"find\":[\"text\"],\"find\":[\"text\"",
+          "after": "ok 200 text:554 links:0 images:68 tables:0"
+        },
+        {
+          "input": "fetch coppa italia line-ups",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"coppa italia line-ups\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"coppa itali\"}",
+          "after": null
+        },
+        {
+          "input": "hi, get link urls for e-bike ratings so i can paste it into excel",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"e-bike ratings\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"e-bike ratings so ix\"}",
+          "after": null
+        },
+        {
+          "input": "search robot vacumu discounts and get footer linsk.",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"robot vacuum discounts\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"robot vacumu discounts\"}",
+          "after": null
+        },
+        {
+          "input": "search robot vacumu discounts and get footer linsk.",
+          "step": 3,
+          "expected": "{\"tool\":\"fail\",\"reason\":\"not_found\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "after": "ok 200 text:2 links:0 images:28 tables:0"
+        },
+        {
+          "input": "page text from r/rsut now",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://old.reddit.com/r/rust/\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://old.reddit.com/r/rosut/\"}",
+          "after": null
+        },
+        {
+          "input": "quick one: grab the tables for robot vaucum ratings from the web",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"robot vacuum ratings\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"robot vaucum ratings\"}",
+          "after": null
+        },
+        {
+          "input": "please go to wikipedia tahnks",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/Ada_lovelace\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://en.wikipedia.org/wiki/World_war_ii\"}",
+          "after": null
+        },
+        {
+          "input": "serach quantum ocmputing rumours and get table rows thx",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"quantum computing rumours\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"quantum ocmputing rumorus rimorus\"}",
+          "after": null
+        },
+        {
+          "input": "coppa italia line-ups today?",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"coppa italia line-ups today\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"coppa itali today\"}",
+          "after": null
+        },
+        {
+          "input": "QUICK ONE: A SUMMARY OF THE PAGE FOR https://cevare.edu/4520-kupiku-9819-9673-harbor-zoseho-tatu-4566-puffin?src=37834&tab=puffin&page_id=Reef+Lantern",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://cevare.edu/4520-kupiku-9819-9673-harbor-zoseho-tatu-4566-puffin?src=37834&tab=puffin&page_id=Reef+Lantern\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://cevare.edu/4520-kupiku-9819-9673-harbor-zoseho-tatu-4566-puffin&page_id=Reef+Lantern\"}",
+          "after": null
+        },
+        {
+          "input": "hi, load https://example.org/jobs then extract meta, photos and copy pls for my report",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"text\",\"images\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"images\"]}",
+          "after": "ok 200 text:18 links:336 images:112 tables:1"
+        },
+        {
+          "input": "Ok search for tomorrow's amazon stock forecats",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"amazon stock forecast tomorrow\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"amazon stock forecats tomorrow\"}",
+          "after": null
+        }
+      ],
+      "ms_per_step": 95.11
+    },
+    "unseen phrasings": {
+      "n": 600,
+      "steps": 2069,
+      "step_acc": 0.885,
+      "episode_exact": 0.6533,
+      "first_call": 0.735,
+      "json_valid": 0.9966,
+      "failures": [
+        {
+          "input": "yo gather up link addressse at 'farm.com/7PsE68/TY6ET9LB8P4.pdf'",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"farm.com\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "after": "ok 200 text:309 links:0 images:184 tables:0"
+        },
+        {
+          "input": "Rip links off gamma-museum.edu/_/8b162926a2718/eEQb/ asap",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"links\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"images\"]}",
+          "after": "ok 200 text:0 links:1094 images:102 tables:2"
+        },
+        {
+          "input": "please bring me nvdiia reviews?",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"nvidia reviews\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"bring me nvidia reviews\"}",
+          "after": null
+        },
+        {
+          "input": "please bring me space x updates",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"space x updates\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"bring me space x\"}",
+          "after": null
+        },
+        {
+          "input": "OK REPORT UFC RESULTS THANKS FOR MY REPORT",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"ufc results\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"results thangs\"}",
+          "after": null
+        },
+        {
+          "input": "HI,  HARVEST ALL TABLE ROWS ABOUT NEWS ABOUT TESLA FOR ME",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"news about tesla\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"harerst all table\"}",
+          "after": null
+        },
+        {
+          "input": "socut, harvest h1-h3 about load shedding in berlin pls",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"load shedding in berlin\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"haredst headl hedding in berlin\"}",
+          "after": null
+        },
+        {
+          "input": "scout, would you mind fetching every bit of data that city.co.za/filu-design-8335-learn/maker-81840/kasuhuco-space-jezu-9467-voge-9962/L2QEOSJ/seloto-cape-smart-8859-4903-zetejuge-1657-earth-build has",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://city.co.za/filu-design-8335-learn/maker-81840/kasuhuco-space-jezu-9467-voge-9962/L2QEOSJ/seloto-cape-smart-8859-4903-zetejuge-1657-earth-build\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://data.co.za/filu-design-8335-learn/maker-81840/kasuhuco-space-jezu-9467-voge-9962/L2QEOSJ/seloto-cape-smart-8859-4903-zetejuge-1657",
+          "after": null
+        },
+        {
+          "input": "dotenv npm docs asap",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://www.npmjs.com/package/dotenv\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"dotenv npm docs\"}",
+          "after": null
+        },
+        {
+          "input": "QUICK ONE: I'M AFTER URLS, TITLE, PICTURES, SITE IS news.farm468.com/uYuv/N-TqgRII1/6720-tuzukaca-7977-print-2863-ink-8533-forest-stone/BD02P95WG99/!",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://news.farm468.com/uYuv/N-TqgRII1/6720-tuzukaca-7977-print-2863-ink-8533-forest-stone/BD02P95WG99/\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://arm468.com/uYuv/N-TqgRII1/6720-tuzukaca-7977-print-2863-ink-8533-forest-stone/BD02P95WG99/\"}",
+          "after": null
+        },
+        {
+          "input": "QUICK ONE: I'M AFTER URLS, TITLE, PICTURES, SITE IS news.farm468.com/uYuv/N-TqgRII1/6720-tuzukaca-7977-print-2863-ink-8533-forest-stone/BD02P95WG99/!",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"title\",\"links\",\"images\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"title\",\"images\"]}",
+          "after": "ok 200 text:131 links:1001 images:264 tables:2"
+        },
+        {
+          "input": "i'm curious about psl schedule",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"psl schedule\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"curisous about psl schedule\"}",
+          "after": null
+        },
+        {
+          "input": "gather up the prose at nation-gamma.tech/space-global/shop807/music",
+          "step": 2,
+          "expected": "{\"tool\":\"search\",\"q\":\"nation-gamma.tech\"}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "after": "ok 200 text:0 links:126 images:181 tables:1"
+        },
+        {
+          "input": "scout, scout the web for jobs in gqeberha",
+          "step": 2,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://en.castle-mango.net/gqeberha-jobs-666653/\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://en.castle-mango.net/gqeberha-jobs-66653/\"}",
+          "after": "results 1 https://en.castle-mango.net/gqeberha-jobs-666653/"
+        },
+        {
+          "input": "task: hunt down jse top 40 news",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"jse top 40 news\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"down jse top 40 news\"}",
+          "after": null
+        },
+        {
+          "input": "hunt down petrol news thx because i need it for a meeting",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"petrol news\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"down petrol news\"}",
+          "after": null
+        },
+        {
+          "input": "task: dig up tdoay's nvidia stock price",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"nvidia stock price today\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"nvidia stock price\"}",
+          "after": null
+        },
+        {
+          "input": "MY BOSS ASKED ME TO LOOK INTO COMPETITORS, SO COULD YOU PLEASE play.edu/posts/zen.php -> A FULL EXTRACTION",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"https://play.edu/posts/zen.php\"}",
+          "got": "{\"tool\":\"goto\",\"url\":\"https://please.to/posts/zen.php\"}",
+          "after": null
+        },
+        {
+          "input": "ok ggml-org/llama.cpp's github page for me",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"all\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"title\"]}",
+          "after": "ok 200 text:869 links:1862 images:119 tables:0"
+        },
+        {
+          "input": "yo dig up otmorrow nasdaq chart asap",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"nasdaq chart tomorrow\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"nasdaq chart asdaq chart\"}",
+          "after": null
+        },
+        {
+          "input": "my boss asked me to look into competitors, so could you please would you mind fetching headings, data atbles, meta info that lemon789.com.au/search has pls",
+          "step": 2,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"headings\",\"tables\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"meta\",\"tables\"]}",
+          "after": "ok 200 text:166 links:0 images:54 tables:1"
+        },
+        {
+          "input": "hi, summarize http://m.news.co.in/posts for me for me",
+          "step": 1,
+          "expected": "{\"tool\":\"goto\",\"url\":\"http://m.news.co.in/posts\"}",
+          "got": "{\"tool\":\"fail\",\"reason\":\"out_of_scope\"}",
+          "after": null
+        },
+        {
+          "input": "quick favour - please i'm curious about latest fa cup transfers",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"images\"]}",
+          "after": "ok 200 text:231 links:1283 images:0 tables:0"
+        },
+        {
+          "input": "task:  i'm curious about la liga news thanks",
+          "step": 1,
+          "expected": "{\"tool\":\"search\",\"q\":\"la liga news\"}",
+          "got": "{\"tool\":\"search\",\"q\":\"im news\"}",
+          "after": null
+        },
+        {
+          "input": "task:  i'm curious about la liga news thanks",
+          "step": 3,
+          "expected": "{\"tool\":\"extract\",\"fields\":[\"text\"]}",
+          "got": "{\"tool\":\"extract\",\"fields\":[\"images\"]}",
+          "after": "ok 200 text:92 links:12 images:0 tables:14"
+        }
+      ],
+      "ms_per_step": 87.92
+    }
+  }
+}

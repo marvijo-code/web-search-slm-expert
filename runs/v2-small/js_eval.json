@@ -1,0 +1,1956 @@
+{
+  "weights": "../runs/v2-small/weights",
+  "params": 2675712,
+  "sets": {
+    "handwritten_eval.jsonl": {
+      "n": 50,
+      "exact_match": 0.96,
+      "json_valid": 1,
+      "url_match": 0.973,
+      "fields_match": 1,
+      "ms_per_request": 948.9,
+      "outputs": [
+        {
+          "input": "go to example.com and give me the data",
+          "expected": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "Go to example.com and give me the data",
+          "expected": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "go to https://example.com and give me the links",
+          "expected": "{\"url\":\"https://example.com\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://example.com\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "what's the title of example.org?",
+          "expected": "{\"url\":\"https://example.org\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://example.org\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape iana.org/domains and get the headings",
+          "expected": "{\"url\":\"https://iana.org/domains\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://iana.org/domains\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "pull all the links from news.ycombinator.com",
+          "expected": "{\"url\":\"https://news.ycombinator.com\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://news.ycombinator.com\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "grab the images on unsplash.com",
+          "expected": "{\"url\":\"https://unsplash.com\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://unsplash.com\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "i need the tables from en.wikipedia.org/wiki/List_of_countries",
+          "expected": "{\"url\":\"https://en.wikipedia.org/wiki/List_of_countries\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://en.wikipedia.org/wiki/List_of_countries\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "get me the text of quotes.toscrape.com",
+          "expected": "{\"url\":\"https://quotes.toscrape.com\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://quotes.toscrape.com\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "books.toscrape.com - give me everything",
+          "expected": "{\"url\":\"https://books.toscrape.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://books.toscrape.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "open http://httpbin.org/html and extract the paragraphs",
+          "expected": "{\"url\":\"http://httpbin.org/html\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"http://httpbin.org/html\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the meta description of stripe.com",
+          "expected": "{\"url\":\"https://stripe.com\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://stripe.com\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "visit vercel.com and grab the headings and links",
+          "expected": "{\"url\":\"https://vercel.com\",\"extract\":[\"headings\",\"links\"]}",
+          "got": "{\"url\":\"https://vercel.com\",\"extract\":[\"headings\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "fetch developer.mozilla.org",
+          "expected": "{\"url\":\"https://developer.mozilla.org\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://developer.mozilla.org\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "what's on kotlinlang.org",
+          "expected": "{\"url\":\"https://kotlinlang.org\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://kotlinlang.org\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "extract the page title and the images from pexels.com",
+          "expected": "{\"url\":\"https://pexels.com\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"https://pexels.com\",\"extract\":[\"title\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "can you scrape weather.com for me",
+          "expected": "{\"url\":\"https://weather.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://weather.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "crawl docs.docker.com/get-started and give me the text",
+          "expected": "{\"url\":\"https://docs.docker.com/get-started\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://docs.docker.com/get-started\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "get all urls on https://www.gov.za",
+          "expected": "{\"url\":\"https://www.gov.za\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.gov.za\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "use puppeteer to open sars.gov.za and get the headings",
+          "expected": "{\"url\":\"https://sars.gov.za\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://sars.gov.za\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "I want the photos from flickr.com/explore",
+          "expected": "{\"url\":\"https://flickr.com/explore\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://flickr.com/explore\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape https://www.timeanddate.com/worldclock for the tables",
+          "expected": "{\"url\":\"https://www.timeanddate.com/worldclock\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.timeanddate.com/worldclock\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "give me the seo metadata of shopify.com",
+          "expected": "{\"url\":\"https://shopify.com\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://shopify.com\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "go to EXAMPLE.COM and get the title",
+          "expected": "{\"url\":\"https://example.com\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://example.com\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "example.com",
+          "expected": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "dump https://httpbin.org",
+          "expected": "{\"url\":\"https://httpbin.org\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://httpbin.org\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "pull the h1s and paragraphs off w3.org",
+          "expected": "{\"url\":\"https://w3.org\",\"extract\":[\"headings\",\"text\"]}",
+          "got": "{\"url\":\"https://w3.org\",\"extract\":[\"headings\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "go to archive.org and list the links",
+          "expected": "{\"url\":\"https://archive.org\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://archive.org\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "Hey, could you go to mozilla.org and fetch the page title?",
+          "expected": "{\"url\":\"https://mozilla.org\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://mozilla.org\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape craigslist.org/about for text and links",
+          "expected": "{\"url\":\"https://craigslist.org/about\",\"extract\":[\"text\",\"links\"]}",
+          "got": "{\"url\":\"https://craigslist.org/about\",\"extract\":[\"text\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "get the tables and headings from wikipedia.org",
+          "expected": "{\"url\":\"https://wikipedia.org\",\"extract\":[\"headings\",\"tables\"]}",
+          "got": "{\"url\":\"https://wikipedia.org\",\"extract\":[\"headings\",\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "show me the images and links on dribbble.com/shots",
+          "expected": "{\"url\":\"https://dribbble.com/shots\",\"extract\":[\"links\",\"images\"]}",
+          "got": "{\"url\":\"https://dribbble.com/shots\",\"extract\":[\"links\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "read kubernetes.io/docs and give me the contents",
+          "expected": "{\"url\":\"https://kubernetes.io/docs\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://kubernetes.io/docs\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "whats on lichess.org?",
+          "expected": "{\"url\":\"https://lichess.org\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://lichess.org\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "extract everything from https://www.capetown.gov.za/",
+          "expected": "{\"url\":\"https://www.capetown.gov.za/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.capetown.gov\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "get the text from medium.com/about please",
+          "expected": "{\"url\":\"https://medium.com/about\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://medium.com/about\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "go to tailwindcss.com and give me the headings, links and images",
+          "expected": "{\"url\":\"https://tailwindcss.com\",\"extract\":[\"headings\",\"links\",\"images\"]}",
+          "got": "{\"url\":\"https://tailwindcss.com\",\"extract\":[\"headings\",\"links\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the website and give me the links",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "go to the site and get the data",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "extract the tables from that page",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "crawl my website",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "what's the weather in durban",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "write a haiku about the sea",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "send an email to info@example.com",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "who is the president of south africa",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": false
+        },
+        {
+          "input": "tell me a joke about programmers",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "how do i center a div",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "good morning",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "calculate 15% of 200",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "book me a table for two tonight",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        }
+      ]
+    },
+    "independent_eval.jsonl": {
+      "n": 120,
+      "exact_match": 0.775,
+      "json_valid": 0.9917,
+      "url_match": 0.76,
+      "fields_match": 0.95,
+      "ms_per_request": 1511.8,
+      "outputs": [
+        {
+          "input": "get the title and links from https://www.bbc.com/news",
+          "expected": "{\"url\":\"https://www.bbc.com/news\",\"extract\":[\"title\",\"links\"]}",
+          "got": "{\"url\":\"https://www.bbc.com/news\",\"extract\":[\"title\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "pls grab headings from news24.com",
+          "expected": "{\"url\":\"https://news24.com\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://news24.com\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the tables on https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+          "expected": "{\"url\":\"https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://en.wikipedia.org/wiki/List_of_countries_by_GDp_(nominal)\",\"extract\":[\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "Extract images and title from HTTP://WWW.Takealot.com/Deals/",
+          "expected": "{\"url\":\"http://www.takealot.com/Deals/\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"http://www.takealot.com/deals/\",\"extract\":[\"title\",\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "need the meta description for https://www.gov.za/about-government",
+          "expected": "{\"url\":\"https://www.gov.za/about-government\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://www.gov.za/about-government\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "text from docs.python.org/3/tutorial/index.html",
+          "expected": "{\"url\":\"https://docs.python.org/3/tutorial/index.html\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://docs.python.org/3/tutorial/index.html\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "can u get me all the links on https://developer.mozilla.org/en-US/docs/Web/HTML.",
+          "expected": "{\"url\":\"https://developer.mozilla.org/en-US/docs/Web/HTML\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://developer.mozilla.org/en-US/Docs/Web/HTml\",\"extract\":[\"links\"]}",
+          "ok": false
+        },
+        {
+          "input": "headings and text from (https://www.sars.gov.za/)",
+          "expected": "{\"url\":\"https://www.sars.gov.za/\",\"extract\":[\"headings\",\"text\"]}",
+          "got": "{\"url\":\"https://www.sars.gov\",\"extract\":[\"headings\",\"text\"]}",
+          "ok": false
+        },
+        {
+          "input": "Get the h1 from \"https://www.dailymaverick.co.za/article/2024-05-01-some-story/\"",
+          "expected": "{\"url\":\"https://www.dailymaverick.co.za/article/2024-05-01-some-story/\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.dailymaverick.co.za/article/2024-01-some-story/\",\"extract\":[\"headings\"]}",
+          "ok": false
+        },
+        {
+          "input": "images and links from mweb.co.za",
+          "expected": "{\"url\":\"https://mweb.co.za\",\"extract\":[\"links\",\"images\"]}",
+          "got": "{\"url\":\"https://mweb.co.za\",\"extract\":[\"links\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "title of https://github.com/torvalds/linux?",
+          "expected": "{\"url\":\"https://github.com/torvalds/linux\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://github.com/torvalds/linux\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "pull out the page title and the pictures from https://www.woolworths.co.za/cat/Food/Fruit-Vegetables/_/N-1z13sk5",
+          "expected": "{\"url\":\"https://www.woolworths.co.za/cat/Food/Fruit-Vegetables/_/N-1z13sk5\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"https://www.woolworths.co.za/cat/Food/Fruit-Vegetables/_(N-1z13sk5\",\"extract\":[\"title\",\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "give me the paragraphs from https://www.nytimes.com/section/world",
+          "expected": "{\"url\":\"https://www.nytimes.com/section/world\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.nytimes.com/section/world\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "Please scrape the SEO info of bidorbuy.co.za, thanks",
+          "expected": "{\"url\":\"https://bidorbuy.co.za\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://bidorbuy.co.za\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "tables from https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/",
+          "expected": "{\"url\":\"https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.sars.gov\",\"extract\":[\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "whats the page title for iol.co.za/news/south-africa",
+          "expected": "{\"url\":\"https://iol.co.za/news/south-africa\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://iol.co.za/news/south-africa\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "headers and meta tags from https://www.theverge.com/tech",
+          "expected": "{\"url\":\"https://www.theverge.com/tech\",\"extract\":[\"meta\",\"headings\"]}",
+          "got": "{\"url\":\"https://www.theverge.com/tech\",\"extract\":[\"meta\",\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "puppeteer: open https://www.amazon.com/dp/B08N5WRWNW and get title, images",
+          "expected": "{\"url\":\"https://www.amazon.com/dp/B08N5WRWNW\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"https://www.amazon.com/dp/B08n5wrw\",\"extract\":[\"title\",\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "use a browser to fetch the links from cnn.com/world",
+          "expected": "{\"url\":\"https://cnn.com/world\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://cnn.com/world\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "headings, links, text of https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array",
+          "expected": "{\"url\":\"https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array\",\"extract\":[\"headings\",\"text\",\"links\"]}",
+          "got": "{\"url\":\"https://stackoverflow.com/questions/11227809/wci-is-processink-processing-an-punsorted-an-un-phest\",\"extract\":[\"text\"]}",
+          "ok": false
+        },
+        {
+          "input": "images from https://unsplash.com/s/photos/cape-town",
+          "expected": "{\"url\":\"https://unsplash.com/s/photos/cape-town\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://unsplash.com/s/photos/cape-town\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "links only: www.gumtree.co.za/s-cars-bakkies/v1c9077p1",
+          "expected": "{\"url\":\"https://www.gumtree.co.za/s-cars-bakkies/v1c9077p1\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.gumtree.co.za/s-cars-bakkies/v1c9077p1\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape title/meta from HTTPS://Mybroadband.co.za/news",
+          "expected": "{\"url\":\"https://mybroadband.co.za/news\",\"extract\":[\"title\",\"meta\"]}",
+          "got": "{\"url\":\"https://mybroadband.co.za/news\",\"extract\":[\"title\",\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "extract the article text from https://www.theguardian.com/world/2024/jan/05/storm-hits-coast",
+          "expected": "{\"url\":\"https://www.theguardian.com/world/2024/jan/05/storm-hits-coast\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.theguardian.com/world/2024/jan/05/storm-hits-coast\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "tables on https://www.fnb.co.za/rates-and-fees/index.html pls",
+          "expected": "{\"url\":\"https://www.fnb.co.za/rates-and-fees/index.html\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.fnb.co.za/rates-and-fees/index.html\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "get h2 and h3 headings and the body copy from https://www.bbc.co.uk/food/recipes/easy_pancakes",
+          "expected": "{\"url\":\"https://www.bbc.co.uk/food/recipes/easy_pancakes\",\"extract\":[\"headings\",\"text\"]}",
+          "got": "{\"url\":\"https://www.bbc.co.uk/food/recipes/easy_pancakes\",\"extract\":[\"headings\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "all the photos from https://www.nationalgeographic.com/photography",
+          "expected": "{\"url\":\"https://www.nationalgeographic.com/photography\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.nationalgeograph.com/photography\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "text + title: https://docs.docker.com/get-started/?utm_source=nav",
+          "expected": "{\"url\":\"https://docs.docker.com/get-started/?utm_source=nav\",\"extract\":[\"title\",\"text\"]}",
+          "got": "{\"url\":\"https://docs.docker.com/get-started/\",\"extract\":[\"title\",\"text\"]}",
+          "ok": false
+        },
+        {
+          "input": "Could you please pull the hrefs from https://news.ycombinator.com/newest. Thanks!",
+          "expected": "{\"url\":\"https://news.ycombinator.com/newest\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://news.ycombinator.com/newest\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "metadata for https://www.eskom.co.za/",
+          "expected": "{\"url\":\"https://www.eskom.co.za/\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://www.eskom.co.za/\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "title, headings, links from rottentomatoes.com/browse/movies_in_theaters",
+          "expected": "{\"url\":\"https://rottentomatoes.com/browse/movies_in_theaters\",\"extract\":[\"title\",\"headings\",\"links\"]}",
+          "got": "{\"url\":\"https://rottentomatoes.com/browse/movies_in_theaters\",\"extract\":[\"title\",\"headings\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "get me the table data at https://www.worldometers.info/world-population/",
+          "expected": "{\"url\":\"https://www.worldometers.info/world-population/\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.worldometers.info/world-population/\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the page title of timeslive.co.za!",
+          "expected": "{\"url\":\"https://timeslive.co.za\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://timeslive.co.za\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "images on https://www.pnp.co.za/c/pnpbase?q=milk",
+          "expected": "{\"url\":\"https://www.pnp.co.za/c/pnpbase?q=milk\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.pnp.co.za/c/pnpbase?q=milk\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "[https://www.news24.com/news24/southafrica] headings",
+          "expected": "{\"url\":\"https://www.news24.com/news24/southafrica\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.news24.com/news24/southafrica\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "plain text from https://www.rfc-editor.org/rfc/rfc2616",
+          "expected": "{\"url\":\"https://www.rfc-editor.org/rfc/rfc2616\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.rfc-editor.org/rfc/rfc2616\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "section titles for en.wikipedia.org/wiki/Johannesburg",
+          "expected": "{\"url\":\"https://en.wikipedia.org/wiki/Johannesburg\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://en.wikipedia.org/wiki/Johannesburg\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "links and images from https://www.mrp.com/en_za/",
+          "expected": "{\"url\":\"https://www.mrp.com/en_za/\",\"extract\":[\"links\",\"images\"]}",
+          "got": "{\"url\":\"https://www.mrp.com/en_za/\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "tell me the title and meta description of www.capetown.gov.za",
+          "expected": "{\"url\":\"https://www.capetown.gov.za\",\"extract\":[\"title\",\"meta\"]}",
+          "got": "{\"url\":\"https://www.capetown.gov\",\"extract\":[\"title\",\"meta\"]}",
+          "ok": false
+        },
+        {
+          "input": "grab text and tables from https://www.statssa.gov.za/?p=16520",
+          "expected": "{\"url\":\"https://www.statssa.gov.za/?p=16520\",\"extract\":[\"text\",\"tables\"]}",
+          "got": "{\"url\":\"https://www.statssa.gov\",\"extract\":[\"text\",\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "I want to see the headings on https://www.apple.com/iphone/",
+          "expected": "{\"url\":\"https://www.apple.com/iphone/\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.apple.com/iphone/\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "get h1 h2 from https://www.mozilla.org/en-US/firefox/new/",
+          "expected": "{\"url\":\"https://www.mozilla.org/en-US/firefox/new/\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.mozilla.org/en-US/firefox/new/\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the tabels from https://www.premierleague.com/tables",
+          "expected": "{\"url\":\"https://www.premierleague.com/tables\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.premierleague.com/tables\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "linkz on https://www.reddit.com/r/southafrica/",
+          "expected": "{\"url\":\"https://www.reddit.com/r/southafrica/\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.reddit.com/r/southafrica/\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "Fetch titel and images from https://www.etsy.com/search?q=handmade+soap",
+          "expected": "{\"url\":\"https://www.etsy.com/search?q=handmade+soap\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"https://www.etsy.com/search?q=handmade+soap\",\"extract\":[\"title\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "title only. https://www.cnet.com/reviews/best-laptops/",
+          "expected": "{\"url\":\"https://www.cnet.com/reviews/best-laptops/\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.cnet.com/reviews/best-laptops/\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "pls get meta + headings from https://www.pexels.com/search/ocean/",
+          "expected": "{\"url\":\"https://www.pexels.com/search/ocean/\",\"extract\":[\"meta\",\"headings\"]}",
+          "got": "{\"url\":\"https://www.pexels.com/search/ocean/\",\"extract\":[\"meta\",\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "images from the page at kalahari.com",
+          "expected": "{\"url\":\"https://kalahari.com\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://kalahari.com\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "what are the links on http://neverssl.com",
+          "expected": "{\"url\":\"http://neverssl.com\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"http://neverssl.com\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "With puppeteer, load https://www.bloomberg.com/markets and return the headings and links",
+          "expected": "{\"url\":\"https://www.bloomberg.com/markets\",\"extract\":[\"headings\",\"links\"]}",
+          "got": "{\"url\":\"https://www.bloomberg.com/markets\",\"extract\":[\"headings\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "text of the privacy policy page https://policies.google.com/privacy",
+          "expected": "{\"url\":\"https://policies.google.com/privacy\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://policies.google.com/privacy\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "Scrape images, title, and text from https://www.engadget.com/gaming/",
+          "expected": "{\"url\":\"https://www.engadget.com/gaming/\",\"extract\":[\"title\",\"text\",\"images\"]}",
+          "got": "{\"url\":\"https://www.engadget.com/gaming/\",\"extract\":[\"title\",\"text\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "pull the meta tags and the title from https://www.cars.co.za/",
+          "expected": "{\"url\":\"https://www.cars.co.za/\",\"extract\":[\"title\",\"meta\"]}",
+          "got": "{\"url\":\"https://www.cars.co.za/\",\"extract\":[\"title\",\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "get tables and headings from https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+          "expected": "{\"url\":\"https://data.worldbank.org/indicator/NY.GDP.MKTP.CD\",\"extract\":[\"headings\",\"tables\"]}",
+          "got": "{\"url\":\"https://data.worldbank.org/indicator/Ny.gDp\",\"extract\":[\"headings\",\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "extract link urls from https://www.w3schools.com/html/",
+          "expected": "{\"url\":\"https://www.w3schools.com/html/\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.w3schools.com/html/\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "GET THE TITLE FROM HTTPS://WWW.SABC.CO.ZA/SABCNEWS/",
+          "expected": "{\"url\":\"https://www.sabc.co.za/SABCNEWS/\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.sabc.co.za/sabcnews/\",\"extract\":[\"title\"]}",
+          "ok": false
+        },
+        {
+          "input": "images on diy.com/rooms/kitchen/c/kitchens",
+          "expected": "{\"url\":\"https://diy.com/rooms/kitchen/c/kitchens\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://diy.com/rooms/kitchen/c/kitchens\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "the body text from https://www.hsrc.ac.za/en/about/overview, please",
+          "expected": "{\"url\":\"https://www.hsrc.ac.za/en/about/overview\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.hsrc.ac.za/en/about/overview\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "title and h1 for https://www.nature.com/articles/d41586-023-00001-1",
+          "expected": "{\"url\":\"https://www.nature.com/articles/d41586-023-00001-1\",\"extract\":[\"title\",\"headings\"]}",
+          "got": "{\"url\":\"https://www.nature.com/articles/d41586-023-00001-1\",\"extract\":[\"title\",\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "whats the meta description on https://www.discovery.co.za/vitality/about?",
+          "expected": "{\"url\":\"https://www.discovery.co.za/vitality/about\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://www.discovery.co.za/vitality/about\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "show me headings on https://www.gov.uk/browse/visas-immigration",
+          "expected": "{\"url\":\"https://www.gov.uk/browse/visas-immigration\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.gov.uk/browse/visas-immigration\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "links in the footer of https://www.vodacom.co.za",
+          "expected": "{\"url\":\"https://www.vodacom.co.za\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.vodacom.co.za\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the pictures from https://www.pinterest.com/ideas/home-decor/935249274030/",
+          "expected": "{\"url\":\"https://www.pinterest.com/ideas/home-decor/935249274030/\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.pinterest.com/ideas/home-decor/935249274030/\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "get title,text from `https://blog.cloudflare.com/` ",
+          "expected": "{\"url\":\"https://blog.cloudflare.com/\",\"extract\":[\"title\",\"text\"]}",
+          "got": "{\"url\":\"https://blog.cloudflare.com/\",\"extract\":[\"title\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "Need tables and meta from https://www.sahpra.org.za/news-and-updates/",
+          "expected": "{\"url\":\"https://www.sahpra.org.za/news-and-updates/\",\"extract\":[\"meta\",\"tables\"]}",
+          "got": "{\"url\":\"https://www.sahpra.org.za/news-and-updates/\",\"extract\":[\"meta\",\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "text only from medium.com/@someuser/how-to-cook-1234abcd",
+          "expected": "{\"url\":\"https://medium.com/@someuser/how-to-cook-1234abcd\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://medium.com/@someuser/how-to-cook-1234abcd\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "'https://www.coursera.org/browse/data-science' headings and links",
+          "expected": "{\"url\":\"https://www.coursera.org/browse/data-science\",\"extract\":[\"headings\",\"links\"]}",
+          "got": "{\"url\":\"https://www.coursera.org/browse/data-science\",\"extract\":[\"headings\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "any images on takealot.com/all?sort=Price%20Ascending",
+          "expected": "{\"url\":\"https://takealot.com/all?sort=Price%20Ascending\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://takealot.com/all?sort=price%20ascending\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "title+headings+text https://www.healthline.com/nutrition/12-benefits-of-meditation",
+          "expected": "{\"url\":\"https://www.healthline.com/nutrition/12-benefits-of-meditation\",\"extract\":[\"title\",\"headings\",\"text\"]}",
+          "got": "{\"url\":\"https://www.healthline.com/nutrition/12-benefits-of-meditation\",\"extract\":[\"title\",\"headings\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "hey can you look at bbc.com/sport/football and give me just the links",
+          "expected": "{\"url\":\"https://bbc.com/sport/football\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://bbc.com/sport/football\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "SEO tags for https://www.checkers.co.za/ ?",
+          "expected": "{\"url\":\"https://www.checkers.co.za/\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://www.checkers.co.za/\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "tables from the wikipedia page https://en.wikipedia.org/wiki/Springbok",
+          "expected": "{\"url\":\"https://en.wikipedia.org/wiki/Springbok\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://en.wikipedia.org/wiki/Springbok\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "ok so I'm building a price tracker for my side hustle and basically what I need is for you to go to https://www.makro.co.za/electronics/televisions and pull the page title, the pictures and the section headings, thanks so much",
+          "expected": "{\"url\":\"https://www.makro.co.za/electronics/televisions\",\"extract\":[\"title\",\"headings\",\"images\"]}",
+          "got": "{\"url\":\"https://www.makro.co.za/erentronics/tevy\",\"url\":\"htitle\",\"headings\",\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "my boss just asked me to look into what competitors are doing so could you open fnb.co.za/personal and just get me all the text on it, the paragraphs I mean, nothing else",
+          "expected": "{\"url\":\"https://fnb.co.za/personal\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://fnb.co.za/personal\",\"extract\":[\"meta\",\"text\"]}",
+          "ok": false
+        },
+        {
+          "input": "so there's this govt page www.dha.gov.za/index.php/immigration-services and I keep having to copy the tables by hand, can you extract the tables and the links for me please",
+          "expected": "{\"url\":\"https://www.dha.gov.za/index.php/immigration-services\",\"extract\":[\"links\",\"tables\"]}",
+          "got": "{\"url\":\"https://gww.dda.gov\",\"extract\":[\"text\",\"links\",\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "scrape https://www.bbc.com/news",
+          "expected": "{\"url\":\"https://www.bbc.com/news\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.bbc.com/news\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "get everything from news24.com",
+          "expected": "{\"url\":\"https://news24.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://news24.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "what's on the page https://www.iol.co.za/",
+          "expected": "{\"url\":\"https://www.iol.co.za/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.iol.co.za/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape it: www.takealot.com/",
+          "expected": "{\"url\":\"https://www.takealot.com/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.takealot.com/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "give me the content of https://en.wikipedia.org/wiki/Table_Mountain",
+          "expected": "{\"url\":\"https://en.wikipedia.org/wiki/Table_Mountain\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://en.wikipedia.org/wiki/Table_Mountain\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "extract the data from https://www.sars.gov.za/legal-counsel/",
+          "expected": "{\"url\":\"https://www.sars.gov.za/legal-counsel/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.sars.gov\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "summary of the page https://www.gov.za/",
+          "expected": "{\"url\":\"https://www.gov.za/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.gov.za/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "Please scrape all of mybroadband.co.za/news. Thanks",
+          "expected": "{\"url\":\"https://mybroadband.co.za/news\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://mybroadband.co.za/news\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "pull everything off https://docs.python.org/3/library/json.html",
+          "expected": "{\"url\":\"https://docs.python.org/3/library/json.html\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://docs.python.org/3/library/json.html\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "puppeteer scrape of https://www.amazon.com/dp/B07XJ8C8F5",
+          "expected": "{\"url\":\"https://www.amazon.com/dp/B07XJ8C8F5\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.amazon.com/dp/B07xj8c8\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "what does https://stackoverflow.com/questions/tagged/python?tab=newest have on it",
+          "expected": "{\"url\":\"https://stackoverflow.com/questions/tagged/python?tab=newest\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://stackoverflow.com/questions/tagged/python\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "full page dump for capetown.gov.za",
+          "expected": "{\"url\":\"https://capetown.gov.za\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://capetown.gov\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "scrape https://www.checkers.co.za/c-2256/All-Departments/Food",
+          "expected": "{\"url\":\"https://www.checkers.co.za/c-2256/All-Departments/Food\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.checkers.co.za/c-2256/All-Departments/Food\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "grab the whole page from HTTPS://www.Discovery.co.za/portal",
+          "expected": "{\"url\":\"https://www.discovery.co.za/portal\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.discovery.co.za/portal\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "get me the content of rottentomatoes.com!",
+          "expected": "{\"url\":\"https://rottentomatoes.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://rottentomatoes.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "can you scrape this? https://www.nature.com/articles/s41586-020-2649-2",
+          "expected": "{\"url\":\"https://www.nature.com/articles/s41586-020-2649-2\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.nature.com/articles/s41586-020-2\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "extract all data from the site www.eskom.co.za/distribution/tariffs-and-charges/",
+          "expected": "{\"url\":\"https://www.eskom.co.za/distribution/tariffs-and-charges/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.eskom.co.za/distribution/tariffs-and-charges/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "everything on https://www.woolworths.co.za/, thx",
+          "expected": "{\"url\":\"https://www.woolworths.co.za/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.woolworths.co.za/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "use a headless browser to scrape https://www.reddit.com/r/programming/",
+          "expected": "{\"url\":\"https://www.reddit.com/r/programming/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.reddit.com/r/programming/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the whole of medium.com/tag/ai",
+          "expected": "{\"url\":\"https://medium.com/tag/ai\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://medium.com/tag/ai\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "dump https://blog.cloudflare.com/tag/security/ pls",
+          "expected": "{\"url\":\"https://blog.cloudflare.com/tag/security/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://blog.cloudflare.com/tag/security/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "what's on https://www.cnet.com/tech/",
+          "expected": "{\"url\":\"https://www.cnet.com/tech/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.cnet.com/tech/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "I need all the info on this page: https://www.vodacom.co.za/vodacom/shop - everything you can get",
+          "expected": "{\"url\":\"https://www.vodacom.co.za/vodacom/shop\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.vodacom.co.za/vodacom/shop\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape page news.ycombinator.com",
+          "expected": "{\"url\":\"https://news.ycombinator.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://news.ycombinator.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "get the data from https://www.statssa.gov.za/?page_id=1854",
+          "expected": "{\"url\":\"https://www.statssa.gov.za/?page_id=1854\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.statssa.gov\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "scrape the headings from that news site",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "get me the links and images from the page",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "extract the title and meta description please",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "can you scrape the tables on a website for me",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "pull all the text from the article I sent earlier",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "scrape product prices from the shop",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "grab the images from my competitor's page",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "get the headings",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "what's the weather in Durban tomorrow?",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "tell me a joke",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "what is 15% of 2300",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "send a message to thabo@gmail.com saying I'll be late",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "email sarah@company.co.za the quarterly report",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "write a python function to reverse a string",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "book me a table for two at 7pm",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": false
+        },
+        {
+          "input": "hi how are you",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "is takealot.com down right now or is it just me",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "remind me to call mom at 5",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "email the link https://www.news24.com/ to my dad",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "translate good morning to Zulu",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        }
+      ]
+    },
+    "final_blind_test.jsonl": {
+      "n": 150,
+      "exact_match": 0.7333,
+      "json_valid": 0.9933,
+      "url_match": 0.7333,
+      "fields_match": 0.9833,
+      "ms_per_request": 1147,
+      "outputs": [
+        {
+          "input": "get the title and links from bbc.com/news",
+          "expected": "{\"url\":\"https://bbc.com/news\",\"extract\":[\"title\",\"links\"]}",
+          "got": "{\"url\":\"https://bbc.com/news\",\"extract\":[\"title\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "headings of https://docs.python.org/3/tutorial/index.html please",
+          "expected": "{\"url\":\"https://docs.python.org/3/tutorial/index.html\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://docs.python.org/3/tutorial/index.html\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "need all the pictures on www.nationalgeographic.com/animals, thx",
+          "expected": "{\"url\":\"https://www.nationalgeographic.com/animals\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.nationalgeograph.com/animals\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "tables from https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+          "expected": "{\"url\":\"https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://en.wikipedia.org/wiki/List_of_countries_by_GDp_(nominal)\",\"extract\":[\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "meta tags for HTTPS://WWW.Allrecipes.com/Recipe/12345/ ?",
+          "expected": "{\"url\":\"https://www.allrecipes.com/Recipe/12345/\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://www.allrecipes.com/Recipe/12345/\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "paragraphs of the article at theguardian.com/world/2024/mar/05/some-story-title",
+          "expected": "{\"url\":\"https://theguardian.com/world/2024/mar/05/some-story-title\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://theguardian.com/world/2024/mar/05/some-story-title\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "pull the h1-h6 and the og tags from lemonde.fr/international/",
+          "expected": "{\"url\":\"https://lemonde.fr/international/\",\"extract\":[\"meta\",\"headings\"]}",
+          "got": "{\"url\":\"https://lemonde.fr/international/\",\"extract\":[\"meta\",\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "title? https://github.com/torvalds/linux",
+          "expected": "{\"url\":\"https://github.com/torvalds/linux\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://github.com/torvalds/linux\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "Can you give me the thumbnails from youtube.com/results?search_query=lofi+beats",
+          "expected": "{\"url\":\"https://youtube.com/results?search_query=lofi+beats\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://youtube.com/results?search_query&lofi+beats\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "links + title: www.spiegel.de",
+          "expected": "{\"url\":\"https://www.spiegel.de\",\"extract\":[\"title\",\"links\"]}",
+          "got": "{\"url\":\"https://www.spiegel.de\",\"extract\":[\"title\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "I'm a student and need the body text of https://www.ox.ac.uk/admissions/undergraduate/courses, can you get it",
+          "expected": "{\"url\":\"https://www.ox.ac.uk/admissions/undergraduate/courses\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.ox.ac.uk/admissions/undergraduate/courses\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "section titles on 'https://developer.mozilla.org/en-US/docs/Web/CSS'",
+          "expected": "{\"url\":\"https://developer.mozilla.org/en-US/docs/Web/CSS\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://developer.mozilla.org/en-US/Docs/Web/CSs\",\"extract\":[\"headings\"]}",
+          "ok": false
+        },
+        {
+          "input": "tabular data from www.ons.gov.uk/economy/inflationandpriceindices",
+          "expected": "{\"url\":\"https://www.ons.gov.uk/economy/inflationandpriceindices\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.ons.gov\",\"extract\":[\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "scrape just the images n title from etsy.com/market/handmade_candles",
+          "expected": "{\"url\":\"https://etsy.com/market/handmade_candles\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"https://etsy.com/market/handmade_candles\",\"extract\":[\"title\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "headers and paragraphs www.bbc.co.uk/sport/football",
+          "expected": "{\"url\":\"https://www.bbc.co.uk/sport/football\",\"extract\":[\"headings\",\"text\"]}",
+          "got": "{\"url\":\"https://www.bbc.co.uk/sport/football\",\"extract\":[\"headings\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "<https://news.ycombinator.com/item?id=39012345> links only",
+          "expected": "{\"url\":\"https://news.ycombinator.com/item?id=39012345\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://news.ycombinator.com/item?id=39012345\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "give me meta description of shopify.com/pricing",
+          "expected": "{\"url\":\"https://shopify.com/pricing\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://shopify.com/pricing\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "what is the page title of (https://www.reddit.com/r/learnpython/)",
+          "expected": "{\"url\":\"https://www.reddit.com/r/learnpython/\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.reddit.com/r/learnpython/\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "hrefs on http://neverssl.com",
+          "expected": "{\"url\":\"http://neverssl.com\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"http://neverssl.com\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "text from `https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster`",
+          "expected": "{\"url\":\"https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "seo desc + title for nytimes.com",
+          "expected": "{\"url\":\"https://nytimes.com\",\"extract\":[\"title\",\"meta\"]}",
+          "got": "{\"url\":\"https://nytimes.com\",\"extract\":[\"title\"]}",
+          "ok": false
+        },
+        {
+          "input": "need pictures and links, site is abc.net.au/news/2024-05-01/story",
+          "expected": "{\"url\":\"https://abc.net.au/news/2024-05-01/story\",\"extract\":[\"links\",\"images\"]}",
+          "got": "{\"url\":\"https://isc.net.au/news/2024-05-01/story\",\"extract\":[\"links\",\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "Fetch the headings from https://www.rust-lang.org/learn#getting-started.",
+          "expected": "{\"url\":\"https://www.rust-lang.org/learn#getting-started\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.rust-lang.org/learn#getting-started\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "tables?? https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup",
+          "expected": "{\"url\":\"https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "extract article text and the page title from timesofindia.indiatimes.com/india/",
+          "expected": "{\"url\":\"https://timesofindia.indiatimes.com/india/\",\"extract\":[\"title\",\"text\"]}",
+          "got": "{\"url\":\"https://timesofindia.indiatimes\",\"extract\":[\"title\",\"text\"]}",
+          "ok": false
+        },
+        {
+          "input": "images from pinterest.com/search/pins/?q=kitchen%20ideas",
+          "expected": "{\"url\":\"https://pinterest.com/search/pins/?q=kitchen%20ideas\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://pinterest.com/search/pins/\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "cnn.com/politics -> meta tags",
+          "expected": "{\"url\":\"https://cnn.com/politics\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://cnn.com/politics\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "please give me the all links of elpais.com/espana",
+          "expected": "{\"url\":\"https://elpais.com/espana\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://elpais.com/espana\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "Pls sned me the hedaings from wikipedia.org/wiki/Cat",
+          "expected": "{\"url\":\"https://wikipedia.org/wiki/Cat\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://wikipedia.org/wiki/Cat\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "TABLES FROM https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1",
+          "expected": "{\"url\":\"https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.transfermarkt.com/premier-league/startseite/w\",\"extract\":[\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "title,meta,headings of ikea.com/gb/en/",
+          "expected": "{\"url\":\"https://ikea.com/gb/en/\",\"extract\":[\"title\",\"meta\",\"headings\"]}",
+          "got": "{\"url\":\"https://ikea.com/gb/en/\",\"extract\":[\"title\",\"meta\",\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "just the text. https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+          "expected": "{\"url\":\"https://www.gutenberg.org/files/1342/1342-h/1342-h.htm\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.gutenberg.org/files/1342/1342-h/1342-h\",\"extract\":[\"text\"]}",
+          "ok": false
+        },
+        {
+          "input": "all hyperlinks from https://www.bundesregierung.de/breg-de/aktuelles;",
+          "expected": "{\"url\":\"https://www.bundesregierung.de/breg-de/aktuelles\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.bundesregierung.de/breg-de/aktuelles\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "photos on airbnb.com/rooms/12345678?adults=2&check_in=2025-01-10",
+          "expected": "{\"url\":\"https://airbnb.com/rooms/12345678?adults=2&check_in=2025-01-10\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://airbnb.com/rooms/12345678\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "I want to see the h2s of https://www.smashingmagazine.com/category/css/",
+          "expected": "{\"url\":\"https://www.smashingmagazine.com/category/css/\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.smashingmagazingmagazine.com/category/css/\",\"extract\":[\"headings\"]}",
+          "ok": false
+        },
+        {
+          "input": "get the images and the text for me from www.bonappetit.com/recipe/bas-best-chocolate-chip-cookies",
+          "expected": "{\"url\":\"https://www.bonappetit.com/recipe/bas-best-chocolate-chip-cookies\",\"extract\":[\"text\",\"images\"]}",
+          "got": "{\"url\":\"https://www.bonappetit.com/recipe/bas-best-cholate-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-chip-c",
+          "ok": false
+        },
+        {
+          "input": "title tag only: https://www.mercadolibre.com.ar/",
+          "expected": "{\"url\":\"https://www.mercadolibre.com.ar/\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.mercadolibre.com\",\"extract\":[\"title\"]}",
+          "ok": false
+        },
+        {
+          "input": "links, images, tables from the page www.cia.gov/the-world-factbook/countries/brazil/",
+          "expected": "{\"url\":\"https://www.cia.gov/the-world-factbook/countries/brazil/\",\"extract\":[\"links\",\"images\",\"tables\"]}",
+          "got": "{\"url\":\"https://www.cia.gov/the-world-factbook/countries/brazil/\",\"extract\":[\"links\",\"images\",\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "rip the copy off https://www.apple.com/iphone/",
+          "expected": "{\"url\":\"https://www.apple.com/iphone/\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.apple.com/iphone/\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "og tags of http://www.imdb.com/title/tt0111161/ thanks!",
+          "expected": "{\"url\":\"http://www.imdb.com/title/tt0111161/\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"http://www.imdb.com/title/tt011111\",\"extract\":[\"meta\"]}",
+          "ok": false
+        },
+        {
+          "input": "kindly extract the page title for www.sbs.com.au/news",
+          "expected": "{\"url\":\"https://www.sbs.com.au/news\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.sbs.com\",\"extract\":[\"title\"]}",
+          "ok": false
+        },
+        {
+          "input": "urls on https://www.craigslist.org/about/sites",
+          "expected": "{\"url\":\"https://www.craigslist.org/about/sites\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.craigslist.org/about/sites\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "first, the subheadings; second the paragraphs - https://hbr.org/2023/01/some-article",
+          "expected": "{\"url\":\"https://hbr.org/2023/01/some-article\",\"extract\":[\"headings\",\"text\"]}",
+          "got": "{\"url\":\"https://hbr.org/2023/01/some-article\",\"extract\":[\"headings\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "get me title and thumbnails https://vimeo.com/channels/staffpicks",
+          "expected": "{\"url\":\"https://vimeo.com/channels/staffpicks\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"https://vimeo.com/channels/staffpicks\",\"extract\":[\"title\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "bbc.com/news/world-us-canada-12345678. headings",
+          "expected": "{\"url\":\"https://bbc.com/news/world-us-canada-12345678\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://bbc.com/news/world-us-canada-12345678\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "i need text from corriere.it/cronache/ please",
+          "expected": "{\"url\":\"https://corriere.it/cronache/\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://corriere.it/cronache/\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "table from https://www.worldometers.info/world-population/population-by-country/",
+          "expected": "{\"url\":\"https://www.worldometers.info/world-population/population-by-country/\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.worldometers.info/world-population/population-by-country/\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "Look at https://www.w3schools.com/html/html_tables.asp and tell me its headings",
+          "expected": "{\"url\":\"https://www.w3schools.com/html/html_tables.asp\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://www.w3schools.com/html/html_tables\",\"extract\":[\"headings\"]}",
+          "ok": false
+        },
+        {
+          "input": "all pics from zalando.co.uk/womens-shoes/?cat=1",
+          "expected": "{\"url\":\"https://zalando.co.uk/womens-shoes/?cat=1\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://zalando.co.uk/womens-shoes/\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "meta description; title -> https://www.gov.za/about-government",
+          "expected": "{\"url\":\"https://www.gov.za/about-government\",\"extract\":[\"title\",\"meta\"]}",
+          "got": "{\"url\":\"https://www.gov.za/about-government\",\"extract\":[\"title\",\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "Pull out the body text AND all links on docs.docker.com/get-started/",
+          "expected": "{\"url\":\"https://docs.docker.com/get-started/\",\"extract\":[\"text\",\"links\"]}",
+          "got": "{\"url\":\"https://docs.docker.com/get-started/\",\"extract\":[\"text\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "https://www.nature.com/articles/s41586-021-03819-2 - the title",
+          "expected": "{\"url\":\"https://www.nature.com/articles/s41586-021-03819-2\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.nature.com/articles/s41586-021-03819-2\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "headings from HTTP://Tailwindcss.COM/docs/installation",
+          "expected": "{\"url\":\"http://tailwindcss.com/docs/installation\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"http://tailwindcss.com/docs/installation\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "images? www.unsplash.com/s/photos/mountains",
+          "expected": "{\"url\":\"https://www.unsplash.com/s/photos/mountains\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.unsplash.com/s/photos/mountains\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "text + title - Kijiji.ca/b-cars-trucks/canada/c174l0",
+          "expected": "{\"url\":\"https://kijiji.ca/b-cars-trucks/canada/c174l0\",\"extract\":[\"title\",\"text\"]}",
+          "got": "{\"url\":\"https://kijiji.ca/b-cars-trucks/canada/c174l0\",\"extract\":[\"title\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "could u grab the headings and tables from https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
+          "expected": "{\"url\":\"https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates\",\"extract\":[\"headings\",\"tables\"]}",
+          "got": "{\"url\":\"https://www.who.int/data/gho/data/themes/mortality-and-global-health-hestimates\",\"extract\":[\"headings\",\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "get the meta tags from my shop mystore.myshopify.com please",
+          "expected": "{\"url\":\"https://mystore.myshopify.com\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://mystore.myshopify.com\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape the links of github.com/facebook/react/issues?q=is%3Aopen",
+          "expected": "{\"url\":\"https://github.com/facebook/react/issues?q=is%3Aopen\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://github.com/facebook/react/issues\",\"extract\":[\"links\"]}",
+          "ok": false
+        },
+        {
+          "input": "pictures from https://www.jumia.com.ng/phones-tablets/",
+          "expected": "{\"url\":\"https://www.jumia.com.ng/phones-tablets/\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.jumia.com\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "[https://www.baidu.com/s?wd=python] title",
+          "expected": "{\"url\":\"https://www.baidu.com/s?wd=python\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.baidu.com/s?wd=python\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "Paragraphs only from https://ru.wikipedia.org/wiki/Moskva",
+          "expected": "{\"url\":\"https://ru.wikipedia.org/wiki/Moskva\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://ru.wikipedia.org/wiki/Moskva\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "titles of sections at https://de.wikipedia.org/wiki/Berlin#Geschichte",
+          "expected": "{\"url\":\"https://de.wikipedia.org/wiki/Berlin#Geschichte\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://de.wikipedia.org/wiki/Berlin#Geschichte\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "https://www.yelp.com/biz/joes-pizza-new-york links and images",
+          "expected": "{\"url\":\"https://www.yelp.com/biz/joes-pizza-new-york\",\"extract\":[\"links\",\"images\"]}",
+          "got": "{\"url\":\"https://www.yelp.com/biz/joes-pizza-new-york\",\"extract\":[\"links\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "get headings, links, text of www.coursera.org/learn/machine-learning",
+          "expected": "{\"url\":\"https://www.coursera.org/learn/machine-learning\",\"extract\":[\"headings\",\"text\",\"links\"]}",
+          "got": "{\"url\":\"https://www.coursera.org/learn/machine-learning\",\"extract\":[\"headings\",\"text\",\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "SEO meta of kayak.com?",
+          "expected": "{\"url\":\"https://kayak.com\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://kayak.com\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "hey, can u get me the page title and also the og tags from https://www.canva.com/pricing/ ok",
+          "expected": "{\"url\":\"https://www.canva.com/pricing/\",\"extract\":[\"title\",\"meta\"]}",
+          "got": "{\"url\":\"https://www.canva.com/pricing/\",\"extract\":[\"title\",\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "tables on https://www.football-data.co.uk/englandm.php",
+          "expected": "{\"url\":\"https://www.football-data.co.uk/englandm.php\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.football-data.co.uk/englandm.php\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "text of www.sciencedirect.com/science/article/pii/S0140673620301835",
+          "expected": "{\"url\":\"https://www.sciencedirect.com/science/article/pii/S0140673620301835\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.sciencedirect.com/science/article/pii/S0140673620301835\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "Fetch me, if you can, the main headings from news.sky.com/uk",
+          "expected": "{\"url\":\"https://news.sky.com/uk\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://news.sky.com/uk\",\"extract\":[\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "<a href> links from https://www.python.org/downloads/",
+          "expected": "{\"url\":\"https://www.python.org/downloads/\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.python.org/downloads/\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "images from www.flickr.com/photos/nasa2explore/albums",
+          "expected": "{\"url\":\"https://www.flickr.com/photos/nasa2explore/albums\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.flickr.com/photos/nasa2explore/albums\",\"extract\":[\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "title and h1 for amazon.in/dp/B0BDJ9G9XQ",
+          "expected": "{\"url\":\"https://amazon.in/dp/B0BDJ9G9XQ\",\"extract\":[\"title\",\"headings\"]}",
+          "got": "{\"url\":\"https://amazon.in/dp/B0bdj9g9xq\",\"extract\":[\"title\",\"headings\"]}",
+          "ok": false
+        },
+        {
+          "input": "Extract table data from https://www.espn.com/nba/standings",
+          "expected": "{\"url\":\"https://www.espn.com/nba/standings\",\"extract\":[\"tables\"]}",
+          "got": "{\"url\":\"https://www.espn.com/nba/standings\",\"extract\":[\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "text:: https://www.straitstimes.com/singapore/politics",
+          "expected": "{\"url\":\"https://www.straitstimes.com/singapore/politics\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://www.straitstimes.com/singapore/politics\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "get title for https://www.ebay.com/itm/123456789012?hash=item1f",
+          "expected": "{\"url\":\"https://www.ebay.com/itm/123456789012?hash=item1f\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://www.ebay.com/itm/123456789012\",\"extract\":[\"title\"]}",
+          "ok": false
+        },
+        {
+          "input": "headings and meta tags; domain is monocle.com",
+          "expected": "{\"url\":\"https://monocle.com\",\"extract\":[\"meta\",\"headings\"]}",
+          "got": "{\"url\":\"https://monocle.com\",\"extract\":[\"meta\",\"headings\"]}",
+          "ok": true
+        },
+        {
+          "input": "Take https://www.goal.com/en/news, then list all hyperlinks you find",
+          "expected": "{\"url\":\"https://www.goal.com/en/news\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.goal.com/en/news\",\"extract\":[\"links\"]}",
+          "ok": true
+        },
+        {
+          "input": "can i get the thumbnails and title of https://www.twitch.tv/directory",
+          "expected": "{\"url\":\"https://www.twitch.tv/directory\",\"extract\":[\"title\",\"images\"]}",
+          "got": "{\"url\":\"https://www.twitch.tv/directory\",\"extract\":[\"title\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "pictures and paragraphs from https://www.lonelyplanet.com/japan/tokyo",
+          "expected": "{\"url\":\"https://www.lonelyplanet.com/japan/tokyo\",\"extract\":[\"text\",\"images\"]}",
+          "got": "{\"url\":\"https://www.lonelyplanet.com/japan/tokyo\",\"extract\":[\"text\",\"images\"]}",
+          "ok": true
+        },
+        {
+          "input": "https://www.tesla.com/model3 meta",
+          "expected": "{\"url\":\"https://www.tesla.com/model3\",\"extract\":[\"meta\"]}",
+          "got": "{\"url\":\"https://www.tesla.com/model3\",\"extract\":[\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "need the text content of the article https://arstechnica.com/gadgets/2024/01/review/",
+          "expected": "{\"url\":\"https://arstechnica.com/gadgets/2024/01/review/\",\"extract\":[\"text\"]}",
+          "got": "{\"url\":\"https://arstechnica.com/gadgets/2024/01/review/\",\"extract\":[\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "title and text pls www.naver.com",
+          "expected": "{\"url\":\"https://www.naver.com\",\"extract\":[\"title\",\"text\"]}",
+          "got": "{\"url\":\"https://www.naver.com\",\"extract\":[\"title\",\"text\"]}",
+          "ok": true
+        },
+        {
+          "input": "page title for TheVerge.com",
+          "expected": "{\"url\":\"https://theverge.com\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://theverge.com\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "tables and headings: https://www.imf.org/en/Publications/WEO",
+          "expected": "{\"url\":\"https://www.imf.org/en/Publications/WEO\",\"extract\":[\"headings\",\"tables\"]}",
+          "got": "{\"url\":\"https://www.imf.org/en/Publications/Weo\",\"extract\":[\"headings\",\"tables\"]}",
+          "ok": false
+        },
+        {
+          "input": "links from https://www.udemy.com/courses/development/web-development/?sort=popularity-desc",
+          "expected": "{\"url\":\"https://www.udemy.com/courses/development/web-development/?sort=popularity-desc\",\"extract\":[\"links\"]}",
+          "got": "{\"url\":\"https://www.udemy.com/courses/development/web-development/\",\"extract\":[\"links\"]}",
+          "ok": false
+        },
+        {
+          "input": "headings of the page on quora.com/What-is-the-best-way-to-learn-Python",
+          "expected": "{\"url\":\"https://quora.com/What-is-the-best-way-to-learn-Python\",\"extract\":[\"headings\"]}",
+          "got": "{\"url\":\"https://quora.com/what-is-the-best-way-to-learn-Python\",\"extract\":[\"headings\"]}",
+          "ok": false
+        },
+        {
+          "input": "meta, title -- https://mailchimp.com/pricing/",
+          "expected": "{\"url\":\"https://mailchimp.com/pricing/\",\"extract\":[\"title\",\"meta\"]}",
+          "got": "{\"url\":\"https://mailchimp.com/pricing/\",\"extract\":[\"title\",\"meta\"]}",
+          "ok": true
+        },
+        {
+          "input": "images found at www.shein.com/women-dresses-c-1727.html",
+          "expected": "{\"url\":\"https://www.shein.com/women-dresses-c-1727.html\",\"extract\":[\"images\"]}",
+          "got": "{\"url\":\"https://www.shein.com/women-dresses-c-1727\",\"extract\":[\"images\"]}",
+          "ok": false
+        },
+        {
+          "input": "text, tables - www.investopedia.com/terms/p/price-earningsratio.asp",
+          "expected": "{\"url\":\"https://www.investopedia.com/terms/p/price-earningsratio.asp\",\"extract\":[\"text\",\"tables\"]}",
+          "got": "{\"url\":\"https://www.investopedia.com/terms/p/price-earningsratio.asp\",\"extract\":[\"text\",\"tables\"]}",
+          "ok": true
+        },
+        {
+          "input": "I just need the title from medium.com/@someuser/my-post-123abc, nothing else.",
+          "expected": "{\"url\":\"https://medium.com/@someuser/my-post-123abc\",\"extract\":[\"title\"]}",
+          "got": "{\"url\":\"https://medium.com/@someuser/my-post-123abc\",\"extract\":[\"title\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape https://www.bbc.com/news/technology",
+          "expected": "{\"url\":\"https://www.bbc.com/news/technology\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.bbc.com/news/technology\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "what's on www.ted.com/talks",
+          "expected": "{\"url\":\"https://www.ted.com/talks\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.ted.com/talks\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "dump everything from lemonde.fr",
+          "expected": "{\"url\":\"https://lemonde.fr\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://lemonde.fr\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "Summary of the page https://www.reuters.com/world/ please",
+          "expected": "{\"url\":\"https://www.reuters.com/world/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.reuters.com/world/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "get the data from https://data.gov.uk/dataset/abc",
+          "expected": "{\"url\":\"https://data.gov.uk/dataset/abc\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://data.gov.uk/dataset/abc\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "i want the content from tesco.com/groceries",
+          "expected": "{\"url\":\"https://tesco.com/groceries\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://tesco.com/groceries\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "extract all https://www.sbs.com.au",
+          "expected": "{\"url\":\"https://www.sbs.com.au\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.sbs.com\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "scrape it: https://news.yahoo.co.jp/",
+          "expected": "{\"url\":\"https://news.yahoo.co.jp/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://news.yahoo.co\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "grab everything on cnbc.com/investing/",
+          "expected": "{\"url\":\"https://cnbc.com/investing/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://cnbc.com/investing/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "gimme all the stuff on https://www.hm.com/en_gb/index.html",
+          "expected": "{\"url\":\"https://www.hm.com/en_gb/index.html\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.hm.com/en_gb/index.html\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "can you give me a summary of www.wired.com/story/chips-war",
+          "expected": "{\"url\":\"https://www.wired.com/story/chips-war\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.wired.com/story/chips-war\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "read the page at https://www.mit.edu/about/ and tell me what it has",
+          "expected": "{\"url\":\"https://www.mit.edu/about/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.mit.edu/about/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "Full dump of https://www.khanacademy.org/math please",
+          "expected": "{\"url\":\"https://www.khanacademy.org/math\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.khanacademy.org/math\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape rakuten.co.jp",
+          "expected": "{\"url\":\"https://rakuten.co.jp\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://rakuten.co.jp\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "everything about the page https://pt.wikipedia.org/wiki/Brasil",
+          "expected": "{\"url\":\"https://pt.wikipedia.org/wiki/Brasil\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://pt.wikipedia.org/wiki/Brasil\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "extract data from www.zillow.com/homes/for_sale/Austin,-TX_rb/",
+          "expected": "{\"url\":\"https://www.zillow.com/homes/for_sale/Austin,-TX_rb/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.zillow.com/homes/for_sale/Austin\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "pull info from https://www.glassdoor.com/Reviews/index.htm",
+          "expected": "{\"url\":\"https://www.glassdoor.com/Reviews/index.htm\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.glassdoor.com/Reviews/index.htm\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "I need all data on this site: https://www.nhs.uk/conditions/",
+          "expected": "{\"url\":\"https://www.nhs.uk/conditions/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.nhs.uk/conditions/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "scrape sina.com.cn",
+          "expected": "{\"url\":\"https://sina.com.cn\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://sina.com\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "What does stripe.com/docs/api contain",
+          "expected": "{\"url\":\"https://stripe.com/docs/api\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://stripe.com/docs/api\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "crawl the page https://www.coindesk.com/markets/ and give me everything",
+          "expected": "{\"url\":\"https://www.coindesk.com/markets/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.coindesk.com/markets/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "just scrape www.lufthansa.com/de/en/homepage",
+          "expected": "{\"url\":\"https://www.lufthansa.com/de/en/homepage\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.lufthansa.com/de/en/homepage\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "entire page content of http://info.cern.ch/",
+          "expected": "{\"url\":\"http://info.cern.ch/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"http://info.cern\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "parse https://openai.com/blog and return the whole thing",
+          "expected": "{\"url\":\"https://openai.com/blog\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://openai.com/blog\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "get data https://www.ubereats.com/gb",
+          "expected": "{\"url\":\"https://www.ubereats.com/gb\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.ubereats.com/gb\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "full extraction pls: kompas.com",
+          "expected": "{\"url\":\"https://kompas.com\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://kompas.com\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "Pull the data off www.espncricinfo.com/live-cricket-score, thanks",
+          "expected": "{\"url\":\"https://www.espncricinfo.com/live-cricket-score\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.espncricinfo.com/live-cricket-score\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "everything from https://www.netflix.com/browse",
+          "expected": "{\"url\":\"https://www.netflix.com/browse\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.netflix.com/browse\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "summarize the page https://www.theatlantic.com/technology/",
+          "expected": "{\"url\":\"https://www.theatlantic.com/technology/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.theatlantic.com/technology/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "what is on https://www.rte.ie/news/",
+          "expected": "{\"url\":\"https://www.rte.ie/news/\",\"extract\":[\"all\"]}",
+          "got": "{\"url\":\"https://www.rte.ie/news/\",\"extract\":[\"all\"]}",
+          "ok": true
+        },
+        {
+          "input": "get the title and links from that blog",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "scrape the website for me",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "i need the headings of a webpage",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "extract all images from the page",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "pull the tables from the page I sent earlier",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "can you get text out of a site",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "meta tags please",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": false
+        },
+        {
+          "input": "scrapee the data from my company site",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "Extract the paragraphs from this article",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "grab all links off the page",
+          "expected": "{\"error\":\"no_url\"}",
+          "got": "{\"error\":\"no_url\"}",
+          "ok": true
+        },
+        {
+          "input": "what is the weather in Cape Town tomorrow",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "is bbc.com down right now?",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "write me a python function to reverse a string",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "email john.smith@acme-corp.co.za that the meeting moved to 3pm",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "tell me a joke",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "what is 15% of 2340",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "book me a table for two at 8 tonight",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "buy this on amazon.com/dp/B08N5WRWNW",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"url\":\"https://amazon.com/dp/B08n5wrw\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "hello how are you",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "can you check whether https://www.mysite.dev is up",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"url\":\"https://www.mysite.dev\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "send a whatsapp to mom saying i'll be late",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "fix this error: TypeError undefined is not a function",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "who won the world cup in 2018",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "text my brother the link github.com/torvalds/linux",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"url\":\"https://grhub.com/torvalds/linux\",\"extract\":[\"text\",\"links\"]}",
+          "ok": false
+        },
+        {
+          "input": "order a pizza from dominos.co.za",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"url\":\"https://dominos.co.za\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "how do I center a div in css",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "convert 50 usd to zar",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "reserve a flight to Lisbon on ryanair.com for friday",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"url\":\"https://ryanair.com\",\"extract\":[\"all\"]}",
+          "ok": false
+        },
+        {
+          "input": "remind me to call the dentist at 5",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"error\":\"out_of_scope\"}",
+          "ok": true
+        },
+        {
+          "input": "forward this to sarah@gmail.com",
+          "expected": "{\"error\":\"out_of_scope\"}",
+          "got": "{\"url\":\"https://sarahwgmail.com\",\"extract\":[\"all\"]}",
+          "ok": false
+        }
+      ]
+    }
+  }
+}

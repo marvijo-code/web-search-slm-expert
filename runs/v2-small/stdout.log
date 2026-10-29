@@ -1,0 +1,83 @@
+params 2,675,712  train rows 200,000  threads 4
+step 250 loss 1.0209 train_t 1.4m
+{"event": "eval", "step": 250, "t": 87.4, "train_t": 86.9, "val_loss": 0.77494, "val_char_acc": 0.77409}
+step 500 loss 0.3175 train_t 2.9m
+{"event": "eval", "step": 500, "t": 184.0, "train_t": 174.0, "val_loss": 0.34084, "val_char_acc": 0.90197}
+step 750 loss 0.0801 train_t 4.3m
+{"event": "eval", "step": 750, "t": 276.0, "train_t": 258.4, "val_loss": 0.08246, "val_char_acc": 0.97618}
+step 1000 loss 0.0787 train_t 5.7m
+{"event": "eval", "step": 1000, "t": 369.4, "train_t": 344.8, "val_loss": 0.03497, "val_char_acc": 0.989, "em_unseen_domains": 0.42, "em_unseen_phrasings": 0.54}
+step 1250 loss 0.0310 train_t 7.1m
+{"event": "eval", "step": 1250, "t": 489.2, "train_t": 428.9, "val_loss": 0.02618, "val_char_acc": 0.99169}
+step 1500 loss 0.0270 train_t 8.6m
+{"event": "eval", "step": 1500, "t": 583.5, "train_t": 515.1, "val_loss": 0.01447, "val_char_acc": 0.99568}
+step 1750 loss 0.0263 train_t 10.0m
+{"event": "eval", "step": 1750, "t": 674.7, "train_t": 598.8, "val_loss": 0.01914, "val_char_acc": 0.99343}
+step 2000 loss 0.0040 train_t 11.5m
+{"event": "eval", "step": 2000, "t": 771.5, "train_t": 688.7, "val_loss": 0.01375, "val_char_acc": 0.9963, "em_unseen_domains": 0.8, "em_unseen_phrasings": 0.81}
+step 2250 loss 0.0035 train_t 12.9m
+{"event": "eval", "step": 2250, "t": 894.0, "train_t": 776.7, "val_loss": 0.01349, "val_char_acc": 0.99644}
+step 2500 loss 0.0002 train_t 14.3m
+{"event": "eval", "step": 2500, "t": 983.6, "train_t": 860.3, "val_loss": 0.0076, "val_char_acc": 0.99801}
+step 2750 loss 0.0072 train_t 15.8m
+{"event": "eval", "step": 2750, "t": 1078.2, "train_t": 948.3, "val_loss": 0.00478, "val_char_acc": 0.99874}
+step 3000 loss 0.0007 train_t 17.3m
+{"event": "eval", "step": 3000, "t": 1174.8, "train_t": 1038.7, "val_loss": 0.00652, "val_char_acc": 0.99789, "em_unseen_domains": 0.9, "em_unseen_phrasings": 0.81}
+step 3250 loss 0.0021 train_t 18.9m
+{"event": "eval", "step": 3250, "t": 1302.2, "train_t": 1132.0, "val_loss": 0.00549, "val_char_acc": 0.99836}
+step 3500 loss 0.0034 train_t 20.3m
+{"event": "eval", "step": 3500, "t": 1397.3, "train_t": 1220.5, "val_loss": 0.0031, "val_char_acc": 0.99915}
+step 3750 loss 0.0030 train_t 21.8m
+{"event": "eval", "step": 3750, "t": 1492.7, "train_t": 1309.2, "val_loss": 0.00423, "val_char_acc": 0.99897}
+step 4000 loss 0.0038 train_t 23.3m
+{"event": "eval", "step": 4000, "t": 1591.8, "train_t": 1400.8, "val_loss": 0.00393, "val_char_acc": 0.99886, "em_unseen_domains": 0.91, "em_unseen_phrasings": 0.88}
+step 4250 loss 0.0011 train_t 24.8m
+{"event": "eval", "step": 4250, "t": 1712.5, "train_t": 1489.2, "val_loss": 0.00313, "val_char_acc": 0.99921}
+step 4500 loss 0.0016 train_t 26.3m
+{"event": "eval", "step": 4500, "t": 1807.4, "train_t": 1577.8, "val_loss": 0.00355, "val_char_acc": 0.99926}
+step 4750 loss 0.0005 train_t 27.8m
+{"event": "eval", "step": 4750, "t": 1904.7, "train_t": 1666.2, "val_loss": 0.00251, "val_char_acc": 0.99931}
+step 5000 loss 0.0006 train_t 29.4m
+{"event": "eval", "step": 5000, "t": 2006.0, "train_t": 1761.1, "val_loss": 0.00126, "val_char_acc": 0.99969, "em_unseen_domains": 0.91, "em_unseen_phrasings": 0.86}
+step 5250 loss 0.0023 train_t 30.8m
+{"event": "eval", "step": 5250, "t": 2125.5, "train_t": 1847.6, "val_loss": 0.00154, "val_char_acc": 0.99962}
+step 5500 loss 0.0001 train_t 32.2m
+{"event": "eval", "step": 5500, "t": 2217.6, "train_t": 1933.6, "val_loss": 0.00093, "val_char_acc": 0.99975}
+step 5750 loss 0.0001 train_t 33.7m
+{"event": "eval", "step": 5750, "t": 2314.3, "train_t": 2023.1, "val_loss": 0.00067, "val_char_acc": 0.9998}
+step 6000 loss 0.0000 train_t 35.3m
+{"event": "eval", "step": 6000, "t": 2413.4, "train_t": 2115.7, "val_loss": 0.00051, "val_char_acc": 0.99986, "em_unseen_domains": 0.98, "em_unseen_phrasings": 0.92}
+step 6250 loss 0.0008 train_t 36.7m
+{"event": "eval", "step": 6250, "t": 2532.6, "train_t": 2202.1, "val_loss": 0.00079, "val_char_acc": 0.99982}
+step 6500 loss 0.0001 train_t 38.2m
+{"event": "eval", "step": 6500, "t": 2632.1, "train_t": 2293.3, "val_loss": 0.00064, "val_char_acc": 0.99984}
+step 6750 loss 0.0013 train_t 39.7m
+{"event": "eval", "step": 6750, "t": 2727.8, "train_t": 2382.9, "val_loss": 0.00062, "val_char_acc": 0.99984}
+step 7000 loss 0.0002 train_t 41.2m
+{"event": "eval", "step": 7000, "t": 2825.7, "train_t": 2473.9, "val_loss": 0.00036, "val_char_acc": 0.99993, "em_unseen_domains": 0.99, "em_unseen_phrasings": 0.95}
+step 7250 loss 0.0000 train_t 42.8m
+{"event": "eval", "step": 7250, "t": 2950.7, "train_t": 2565.3, "val_loss": 0.00031, "val_char_acc": 0.99995}
+step 7500 loss 0.0000 train_t 44.2m
+{"event": "eval", "step": 7500, "t": 3044.5, "train_t": 2651.9, "val_loss": 9e-05, "val_char_acc": 0.99996}
+step 7750 loss 0.0012 train_t 45.7m
+{"event": "eval", "step": 7750, "t": 3138.5, "train_t": 2739.7, "val_loss": 0.0001, "val_char_acc": 0.99996}
+step 8000 loss 0.0001 train_t 47.2m
+{"event": "eval", "step": 8000, "t": 3238.6, "train_t": 2833.1, "val_loss": 0.00011, "val_char_acc": 0.99996, "em_unseen_domains": 0.99, "em_unseen_phrasings": 0.94}
+step 8250 loss 0.0000 train_t 48.7m
+{"event": "eval", "step": 8250, "t": 3363.2, "train_t": 2923.6, "val_loss": 6e-05, "val_char_acc": 0.99998}
+step 8500 loss 0.0001 train_t 50.2m
+{"event": "eval", "step": 8500, "t": 3457.9, "train_t": 3012.2, "val_loss": 7e-05, "val_char_acc": 1.0}
+step 8750 loss 0.0000 train_t 51.6m
+{"event": "eval", "step": 8750, "t": 3551.8, "train_t": 3098.8, "val_loss": 4e-05, "val_char_acc": 0.99998}
+step 9000 loss 0.0000 train_t 53.1m
+{"event": "eval", "step": 9000, "t": 3643.6, "train_t": 3183.8, "val_loss": 6e-05, "val_char_acc": 0.99998, "em_unseen_domains": 0.98, "em_unseen_phrasings": 0.96}
+step 9250 loss 0.0000 train_t 54.5m
+{"event": "eval", "step": 9250, "t": 3765.6, "train_t": 3271.3, "val_loss": 6e-05, "val_char_acc": 0.99996}
+{"event": "eval", "step": 9332, "t": 3801.3, "train_t": 3300.5, "val_loss": 3e-05, "val_char_acc": 1.0, "em_unseen_domains": 0.97, "em_unseen_phrasings": 0.91}
+done 9332 steps
+val (seen phrasings, new sentences)      scoutlm EM 1.0000  baseline EM 0.8100  146.31 ms/req
+unseen domains                           scoutlm EM 0.9780  baseline EM 0.8380  143.82 ms/req
+unseen phrasings                         scoutlm EM 0.8930  baseline EM 0.8200  136.28 ms/req
+handwritten                              scoutlm EM 0.9600  baseline EM 1.0000  106.28 ms/req
+independent dev (written by another agent) scoutlm EM 0.7750  baseline EM 0.9083  157.02 ms/req
+2,675,712 weights -> 5.35 MB

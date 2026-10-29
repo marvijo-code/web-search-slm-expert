@@ -1,0 +1,6 @@
+nproc: 4
+Model name:                              Intel(R) Xeon(R) Processor @ 2.10GHz
+AMX: yes (amx_int8)
+               total        used        free      shared  buff/cache   available
+Mem:              15           0          14           0           0          15
+torch 2.14.1+cu130

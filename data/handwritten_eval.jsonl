@@ -1,0 +1,50 @@
+{"input": "go to example.com and give me the data", "output": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}"}
+{"input": "Go to example.com and give me the data", "output": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}"}
+{"input": "go to https://example.com and give me the links", "output": "{\"url\":\"https://example.com\",\"extract\":[\"links\"]}"}
+{"input": "what's the title of example.org?", "output": "{\"url\":\"https://example.org\",\"extract\":[\"title\"]}"}
+{"input": "scrape iana.org/domains and get the headings", "output": "{\"url\":\"https://iana.org/domains\",\"extract\":[\"headings\"]}"}
+{"input": "pull all the links from news.ycombinator.com", "output": "{\"url\":\"https://news.ycombinator.com\",\"extract\":[\"links\"]}"}
+{"input": "grab the images on unsplash.com", "output": "{\"url\":\"https://unsplash.com\",\"extract\":[\"images\"]}"}
+{"input": "i need the tables from en.wikipedia.org/wiki/List_of_countries", "output": "{\"url\":\"https://en.wikipedia.org/wiki/List_of_countries\",\"extract\":[\"tables\"]}"}
+{"input": "get me the text of quotes.toscrape.com", "output": "{\"url\":\"https://quotes.toscrape.com\",\"extract\":[\"text\"]}"}
+{"input": "books.toscrape.com - give me everything", "output": "{\"url\":\"https://books.toscrape.com\",\"extract\":[\"all\"]}"}
+{"input": "open http://httpbin.org/html and extract the paragraphs", "output": "{\"url\":\"http://httpbin.org/html\",\"extract\":[\"text\"]}"}
+{"input": "scrape the meta description of stripe.com", "output": "{\"url\":\"https://stripe.com\",\"extract\":[\"meta\"]}"}
+{"input": "visit vercel.com and grab the headings and links", "output": "{\"url\":\"https://vercel.com\",\"extract\":[\"headings\",\"links\"]}"}
+{"input": "fetch developer.mozilla.org", "output": "{\"url\":\"https://developer.mozilla.org\",\"extract\":[\"all\"]}"}
+{"input": "what's on kotlinlang.org", "output": "{\"url\":\"https://kotlinlang.org\",\"extract\":[\"all\"]}"}
+{"input": "extract the page title and the images from pexels.com", "output": "{\"url\":\"https://pexels.com\",\"extract\":[\"title\",\"images\"]}"}
+{"input": "can you scrape weather.com for me", "output": "{\"url\":\"https://weather.com\",\"extract\":[\"all\"]}"}
+{"input": "crawl docs.docker.com/get-started and give me the text", "output": "{\"url\":\"https://docs.docker.com/get-started\",\"extract\":[\"text\"]}"}
+{"input": "get all urls on https://www.gov.za", "output": "{\"url\":\"https://www.gov.za\",\"extract\":[\"links\"]}"}
+{"input": "use puppeteer to open sars.gov.za and get the headings", "output": "{\"url\":\"https://sars.gov.za\",\"extract\":[\"headings\"]}"}
+{"input": "I want the photos from flickr.com/explore", "output": "{\"url\":\"https://flickr.com/explore\",\"extract\":[\"images\"]}"}
+{"input": "scrape https://www.timeanddate.com/worldclock for the tables", "output": "{\"url\":\"https://www.timeanddate.com/worldclock\",\"extract\":[\"tables\"]}"}
+{"input": "give me the seo metadata of shopify.com", "output": "{\"url\":\"https://shopify.com\",\"extract\":[\"meta\"]}"}
+{"input": "go to EXAMPLE.COM and get the title", "output": "{\"url\":\"https://example.com\",\"extract\":[\"title\"]}"}
+{"input": "example.com", "output": "{\"url\":\"https://example.com\",\"extract\":[\"all\"]}"}
+{"input": "dump https://httpbin.org", "output": "{\"url\":\"https://httpbin.org\",\"extract\":[\"all\"]}"}
+{"input": "pull the h1s and paragraphs off w3.org", "output": "{\"url\":\"https://w3.org\",\"extract\":[\"headings\",\"text\"]}"}
+{"input": "go to archive.org and list the links", "output": "{\"url\":\"https://archive.org\",\"extract\":[\"links\"]}"}
+{"input": "Hey, could you go to mozilla.org and fetch the page title?", "output": "{\"url\":\"https://mozilla.org\",\"extract\":[\"title\"]}"}
+{"input": "scrape craigslist.org/about for text and links", "output": "{\"url\":\"https://craigslist.org/about\",\"extract\":[\"text\",\"links\"]}"}
+{"input": "get the tables and headings from wikipedia.org", "output": "{\"url\":\"https://wikipedia.org\",\"extract\":[\"headings\",\"tables\"]}"}
+{"input": "show me the images and links on dribbble.com/shots", "output": "{\"url\":\"https://dribbble.com/shots\",\"extract\":[\"links\",\"images\"]}"}
+{"input": "read kubernetes.io/docs and give me the contents", "output": "{\"url\":\"https://kubernetes.io/docs\",\"extract\":[\"all\"]}"}
+{"input": "whats on lichess.org?", "output": "{\"url\":\"https://lichess.org\",\"extract\":[\"all\"]}"}
+{"input": "extract everything from https://www.capetown.gov.za/", "output": "{\"url\":\"https://www.capetown.gov.za/\",\"extract\":[\"all\"]}"}
+{"input": "get the text from medium.com/about please", "output": "{\"url\":\"https://medium.com/about\",\"extract\":[\"text\"]}"}
+{"input": "go to tailwindcss.com and give me the headings, links and images", "output": "{\"url\":\"https://tailwindcss.com\",\"extract\":[\"headings\",\"links\",\"images\"]}"}
+{"input": "scrape the website and give me the links", "output": "{\"error\":\"no_url\"}"}
+{"input": "go to the site and get the data", "output": "{\"error\":\"no_url\"}"}
+{"input": "extract the tables from that page", "output": "{\"error\":\"no_url\"}"}
+{"input": "crawl my website", "output": "{\"error\":\"no_url\"}"}
+{"input": "what's the weather in durban", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "write a haiku about the sea", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "send an email to info@example.com", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "who is the president of south africa", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "tell me a joke about programmers", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "how do i center a div", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "good morning", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "calculate 15% of 200", "output": "{\"error\":\"out_of_scope\"}"}
+{"input": "book me a table for two tonight", "output": "{\"error\":\"out_of_scope\"}"}

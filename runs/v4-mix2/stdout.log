@@ -1,0 +1,45 @@
+params 2,675,712  train rows 200,000  threads 4
+step 250 loss 0.4600 train_t 6.4m
+{"event": "eval", "step": 250, "t": 383.9, "train_t": 381.6, "val_loss": 0.73698, "val_char_acc": 0.79372}
+step 500 loss 0.4305 train_t 13.9m
+{"event": "eval", "step": 500, "t": 870.9, "train_t": 831.6, "val_loss": 0.46972, "val_char_acc": 0.86458}
+step 750 loss 0.1717 train_t 21.9m
+{"event": "eval", "step": 750, "t": 1383.2, "train_t": 1314.7, "val_loss": 0.09494, "val_char_acc": 0.9711}
+step 1000 loss 0.0600 train_t 29.8m
+{"event": "eval", "step": 1000, "t": 1888.3, "train_t": 1785.2, "val_loss": 0.05072, "val_char_acc": 0.98401, "em_unseen_topics": 0.1, "em_unseen_phrasings": 0.11}
+step 1250 loss 0.0282 train_t 37.5m
+{"event": "eval", "step": 1250, "t": 2452.6, "train_t": 2248.1, "val_loss": 0.03573, "val_char_acc": 0.98985}
+step 1500 loss 0.0265 train_t 45.0m
+{"event": "eval", "step": 1500, "t": 2934.2, "train_t": 2702.0, "val_loss": 0.02361, "val_char_acc": 0.99294}
+step 1750 loss 0.0155 train_t 52.5m
+{"event": "eval", "step": 1750, "t": 3410.4, "train_t": 3151.0, "val_loss": 0.01762, "val_char_acc": 0.9948}
+step 2000 loss 0.0133 train_t 59.8m
+{"event": "eval", "step": 2000, "t": 3875.5, "train_t": 3589.0, "val_loss": 0.01392, "val_char_acc": 0.99582, "em_unseen_topics": 0.41, "em_unseen_phrasings": 0.55}
+step 2250 loss 0.0077 train_t 67.5m
+{"event": "eval", "step": 2250, "t": 4438.4, "train_t": 4048.7, "val_loss": 0.01264, "val_char_acc": 0.99634}
+step 2500 loss 0.0115 train_t 75.3m
+{"event": "eval", "step": 2500, "t": 4936.7, "train_t": 4518.7, "val_loss": 0.01032, "val_char_acc": 0.99697}
+step 2750 loss 0.0036 train_t 83.3m
+{"event": "eval", "step": 2750, "t": 5446.9, "train_t": 5000.4, "val_loss": 0.00843, "val_char_acc": 0.99769}
+step 3000 loss 0.0063 train_t 92.1m
+{"event": "eval", "step": 3000, "t": 6001.7, "train_t": 5526.6, "val_loss": 0.00509, "val_char_acc": 0.99863, "em_unseen_topics": 0.63, "em_unseen_phrasings": 0.76}
+step 3250 loss 0.0122 train_t 100.5m
+{"event": "eval", "step": 3250, "t": 6608.9, "train_t": 6029.3, "val_loss": 0.00434, "val_char_acc": 0.99883}
+step 3500 loss 0.0023 train_t 108.3m
+{"event": "eval", "step": 3500, "t": 7107.9, "train_t": 6495.1, "val_loss": 0.00406, "val_char_acc": 0.99899}
+step 3750 loss 0.0043 train_t 116.2m
+{"event": "eval", "step": 3750, "t": 7618.5, "train_t": 6974.9, "val_loss": 0.00277, "val_char_acc": 0.99926}
+step 4000 loss 0.0178 train_t 123.7m
+{"event": "eval", "step": 4000, "t": 8090.8, "train_t": 7419.0, "val_loss": 0.00284, "val_char_acc": 0.99928, "em_unseen_topics": 0.59, "em_unseen_phrasings": 0.74}
+step 4250 loss 0.0001 train_t 130.7m
+{"event": "eval", "step": 4250, "t": 8614.2, "train_t": 7839.3, "val_loss": 0.00214, "val_char_acc": 0.99941}
+step 4500 loss 0.0060 train_t 137.8m
+{"event": "eval", "step": 4500, "t": 9067.8, "train_t": 8269.6, "val_loss": 0.00196, "val_char_acc": 0.99945}
+step 4750 loss 0.0033 train_t 144.8m
+{"event": "eval", "step": 4750, "t": 9510.5, "train_t": 8688.2, "val_loss": 0.0018, "val_char_acc": 0.99957}
+{"event": "eval", "step": 4916, "t": 9847.6, "train_t": 9000.3, "val_loss": 0.00164, "val_char_acc": 0.99957, "em_unseen_topics": 0.68, "em_unseen_phrasings": 0.86}
+done 4916 steps
+val                  episode EM 0.9460  step acc 0.9840  first call 0.9580  json 0.9989  91.03 ms/step
+unseen topics        episode EM 0.7017  step acc 0.9055  first call 0.7217  json 0.9986  91.59 ms/step
+unseen phrasings     episode EM 0.8283  step acc 0.9462  first call 0.8833  json 0.9990  98.16 ms/step
+2,675,712 weights -> 5.35 MB

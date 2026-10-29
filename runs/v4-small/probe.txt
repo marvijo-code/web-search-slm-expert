@@ -1,0 +1,1 @@
+probe fp32 2.1799s/step  bf16 1.8353s/step  -> using '--bf16'

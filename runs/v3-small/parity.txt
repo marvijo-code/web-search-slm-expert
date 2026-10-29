@@ -1,0 +1,4 @@
+max |logit diff| 2.62e-6  same text: true  js="{"url":"https://example.com","extract":["all"]}"
+max |logit diff| 3.81e-6  same text: true  js="{"url":"https://github.com","extract":["links"]}"
+max |logit diff| 5.72e-6  same text: true  js="{"error":"out_of_scope"}"
+PARITY OK

@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marvijo Web Search 1.1 - agent test bench</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --paper: #eef0ea; --sheet: #f8f9f5; --ink: #171c22; --ink-soft: #4d5660; --rule: #cfd4cb;
+    --signal: #2346d8; --signal-soft: #dfe5fb; --amber: #b9700a; --amber-soft: #f6e6c8;
+    --good: #1f7a4d; --bad: #b3261e; --term-bg: #12161b; --term-fg: #d6dde4;
+    --font-body: "Segoe UI", system-ui, sans-serif;
+    --font-mono: "Cascadia Mono", Consolas, "JetBrains Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12161a; --sheet: #1a2027; --ink: #e6e9ec; --ink-soft: #a2acb6; --rule: #2e3740;
+      --signal: #8ea4ff; --signal-soft: #24304f; --amber: #f0b24a; --amber-soft: #3a2e17;
+      --good: #5cc48f; --bad: #ff8a80; --term-bg: #0b0e11; --term-fg: #d6dde4;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 400 15px/1.6 var(--font-body); padding: 0 16px 64px;
+  }
+  main { max-width: 900px; margin: 0 auto; }
+  header { padding: 28px 0 18px; border-bottom: 1px solid var(--rule); }
+  h1 { font-size: 1.55rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
+  .sub code { font-family: var(--font-mono); font-size: 0.86em; }
+  .badge {
+    display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--rule);
+    color: var(--ink-soft); vertical-align: 2px;
+  }
+  form { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field.grow { flex: 1 1 320px; }
+  label { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+  input[type="text"], select {
+    font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule);
+    border-radius: 7px; padding: 9px 11px; min-width: 0;
+  }
+  input[type="text"] { width: 100%; font-family: var(--font-mono); font-size: 0.92rem; }
+  #maxcalls { width: 6ch; text-align: center; }
+  #maxcalls:disabled { opacity: 0.45; }
+  .check {
+    display: inline-flex; align-items: center; gap: 7px; margin-top: 11px;
+    font-size: 0.85rem; color: var(--ink-soft); cursor: pointer;
+    text-transform: none; letter-spacing: 0; font-weight: 400;
+  }
+  .check.row-check { margin-top: 0; padding-bottom: 10px; }
+  .check input { width: 15px; height: 15px; margin: 0; accent-color: var(--signal); cursor: pointer; }
+  details { margin-top: 8px; }
+  details.data > summary {
+    cursor: pointer; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+  details.step { margin: 0; }
+  summary.stephead { cursor: pointer; list-style: none; }
+  summary.stephead::-webkit-details-marker { display: none; }
+  .caret { color: var(--rule); font-size: 0.62rem; transition: transform 0.15s ease; }
+  details.step[open] > summary .caret { transform: rotate(90deg); }
+  @media (prefers-reduced-motion: reduce) { .caret { transition: none; } }
+  .preview {
+    font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 0 1 auto;
+  }
+  .state { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .state.good { color: var(--good); }
+  .state.err { color: var(--bad); }
+  .body { padding-top: 2px; }
+  button {
+    font: 600 0.92rem var(--font-body); color: #fff; background: var(--signal); border: 0;
+    border-radius: 7px; padding: 10px 18px; cursor: pointer;
+  }
+  button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--rule); font-weight: 500; }
+  button:disabled { opacity: 0.5; cursor: default; }
+  button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }
+  .examples { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+  .examples button {
+    background: var(--sheet); color: var(--ink-soft); border: 1px solid var(--rule);
+    font: 400 0.82rem var(--font-mono); padding: 4px 9px; border-radius: 999px;
+  }
+  .examples button:hover { color: var(--ink); border-color: var(--signal); }
+  .meta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 0.8rem; color: var(--ink-soft); }
+  .meta b { color: var(--ink); font-weight: 600; }
+  #statusline {
+    display: flex; align-items: center; gap: 10px; padding: 14px 0 2px;
+    font-size: 0.85rem; color: var(--ink-soft); min-height: 22px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rule); }
+  .dot.live { background: var(--amber); animation: pulse 1.1s infinite; }
+  .dot.done { background: var(--good); }
+  .dot.fail { background: var(--bad); }
+  @keyframes pulse { 50% { opacity: 0.3; } }
+  ol.steps { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  ol.steps li {
+    background: var(--sheet); border: 1px solid var(--rule); border-left: 3px solid var(--signal);
+    border-radius: 8px; padding: 11px 13px; animation: rise 0.18s ease-out; min-width: 0;
+  }
+  ol.steps li.end { border-left-color: var(--good); }
+  ol.steps li.end.bad { border-left-color: var(--bad); }
+  @keyframes rise { from { opacity: 0; transform: translateY(4px); } }
+  @media (prefers-reduced-motion: reduce) { ol.steps li { animation: none; } .dot.live { animation: none; } }
+  .stephead { display: flex; align-items: baseline; gap: 9px; flex-wrap: nowrap; }
+  .n { font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); }
+  .tool {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 1px 7px; border-radius: 4px; background: var(--signal-soft); color: var(--signal);
+  }
+  .tool.done { background: rgba(31, 122, 77, 0.14); color: var(--good); }
+  .tool.fail { background: rgba(179, 38, 30, 0.12); color: var(--bad); }
+  .ms { margin-left: auto; font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); }
+  pre {
+    margin: 7px 0 0; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.5;
+    white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere; color: var(--ink);
+  }
+  .obs {
+    margin-top: 7px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-soft);
+    border-top: 1px dashed var(--rule); padding-top: 7px; overflow-wrap: anywhere;
+  }
+  .obs.err { color: var(--bad); }
+  .obs a { color: var(--signal); word-break: break-all; }
+  .data { margin-top: 8px; }
+  .data summary { cursor: pointer; font-size: 0.8rem; color: var(--signal); }
+  .result {
+    margin-top: 16px; background: var(--term-bg); color: var(--term-fg); border-radius: 9px;
+    padding: 13px 15px; overflow: auto;
+  }
+  .result .bar { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .result .bar span { font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.7; }
+  .result pre { color: var(--term-fg); font-size: 0.8rem; max-height: 380px; overflow: auto; margin: 0; }
+  .result button { margin-left: auto; background: rgba(255,255,255,0.1); color: var(--term-fg); padding: 4px 10px; font-size: 0.78rem; }
+  .md {
+    margin-top: 16px; background: var(--sheet); border: 1px solid var(--rule);
+    border-radius: 9px; overflow: hidden;
+  }
+  .md .bar {
+    display: flex; align-items: center; gap: 8px; padding: 9px 14px;
+    border-bottom: 1px solid var(--rule); background: var(--paper);
+  }
+  .md .bar span {
+    font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--ink-soft);
+  }
+  .md .bar button {
+    background: transparent; color: var(--ink-soft); border: 1px solid var(--rule);
+    padding: 3px 10px; font-size: 0.76rem; font-weight: 500;
+  }
+  .md .bar button:first-of-type { margin-left: auto; }
+  .md .bar button:hover { color: var(--ink); border-color: var(--signal); }
+  .md .body { padding: 16px 18px 18px; }
+  .md h1 { font-size: 1.12rem; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .md h2 {
+    font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--ink-soft); margin: 18px 0 8px; font-family: var(--font-body); font-weight: 600;
+  }
+  .md p { margin: 0 0 9px; max-width: none; }
+  .md ol, .md ul { margin: 0 0 10px; padding-left: 22px; display: grid; gap: 6px; }
+  .md li { line-height: 1.55; }
+  .md li::marker { color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.85em; }
+  .md code {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 4px;
+    padding: 0 4px; font-size: 0.84em;
+  }
+  .md a { color: var(--signal); text-underline-offset: 2px; word-break: break-word; }
+  .md strong { font-weight: 600; }
+  .md pre {
+    background: var(--term-bg); color: var(--term-fg); padding: 10px 12px;
+    border-radius: 6px; overflow: auto; font-size: 0.8rem;
+  }
+  .md .pill {
+    display: inline-block; font-family: var(--font-mono); font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.05em; padding: 1px 6px;
+    border-radius: 4px; background: var(--signal-soft); color: var(--signal);
+  }
+  .md .pill.ok { background: rgba(31, 122, 77, 0.14); color: var(--good); }
+  .md .pill.err { background: rgba(179, 38, 30, 0.12); color: var(--bad); }
+  .empty { padding: 34px 0 10px; color: var(--ink-soft); font-size: 0.9rem; max-width: 60ch; }
+  .links {
+    margin-top: 16px; background: var(--sheet); border: 1px solid var(--rule);
+    border-radius: 9px; overflow: hidden;
+  }
+  .links .bar {
+    display: flex; align-items: center; gap: 8px; padding: 9px 14px;
+    border-bottom: 1px solid var(--rule); background: var(--paper);
+  }
+  .links .bar span {
+    font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--ink-soft);
+  }
+  .links .rows { display: grid; }
+  .lrow {
+    display: grid; grid-template-columns: 30px 62px minmax(0, 1fr); gap: 10px;
+    align-items: baseline; padding: 8px 14px; border-top: 1px solid var(--rule);
+    color: var(--ink); text-decoration: none;
+  }
+  .lrow:first-child { border-top: 0; }
+  .lrow:hover { background: var(--paper); }
+  .lrow:focus-visible { outline: 3px solid var(--signal); outline-offset: -3px; }
+  .lnum { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+  .lkind {
+    font-family: var(--font-mono); font-size: 0.64rem; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--ink-soft);
+  }
+  .ltext { min-width: 0; }
+  .llabel {
+    display: block; font-size: 0.85rem; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
+  }
+  .llabel:empty { display: none; }
+  .lurl {
+    display: block; font-family: var(--font-mono); font-size: 0.74rem; color: var(--signal);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 9px 14px; border-top: 1px solid var(--rule); background: var(--paper);
+    font-size: 0.78rem; color: var(--ink-soft);
+  }
+  .pager button {
+    background: transparent; color: var(--ink-soft); border: 1px solid var(--rule);
+    padding: 3px 12px; font-size: 0.76rem; font-weight: 500;
+  }
+  .pager button:hover:not(:disabled) { color: var(--ink); border-color: var(--signal); }
+  .pager #lpage { font-family: var(--font-mono); }
+  .pager #lcount { margin-left: auto; font-family: var(--font-mono); font-size: 0.74rem; }
+  @media (max-width: 520px) {
+    .lrow { grid-template-columns: 26px minmax(0, 1fr); }
+    .lnum { grid-row: 1 / span 2; }
+    .lkind { grid-column: 2; }
+    .ltext { grid-column: 2; }
+  }
+  .note { margin-top: 22px; font-size: 0.8rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); }
+  [hidden] { display: none !important; }
+</style>
+<main>
+  <header>
+    <h1>Marvijo Web Search 1.1 <span class="badge">agent test bench</span></h1>
+    <p class="sub">A 2.68M parameter transformer, trained from random weights, writes one tool call per turn.
+      A real headless Chrome runs each call and the one-line result goes back into its context.</p>
+  </header>
+
+  <form id="ask">
+    <div class="row">
+      <div class="field grow">
+        <label for="req">Request</label>
+        <input id="req" type="text" maxlength="300" autocomplete="off" spellcheck="false"
+               placeholder="images of cape town on wikipedia">
+      </div>
+      <div class="field">
+        <label for="model">Model</label>
+        <select id="model"></select>
+      </div>
+      <div class="field">
+        <label for="maxcalls">Max calls</label>
+        <input id="maxcalls" type="text" inputmode="numeric" value="6" spellcheck="false" disabled>
+      </div>
+      <label class="check row-check" for="unlimited"><input id="unlimited" type="checkbox" checked> Unlimited</label>
+      <button id="run" type="submit">Run agent</button>
+      <button id="stop" type="button" class="ghost" hidden>Stop</button>
+    </div>
+    <div class="examples" id="examples"></div>
+    <label class="check" for="collapse"><input id="collapse" type="checkbox" checked>
+      Collapse tool calls and responses, keep only the output open</label>
+    <div class="meta" id="meta"></div>
+  </form>
+
+  <div id="statusline"><span class="dot" id="dot"></span><span id="status">Ready.</span></div>
+  <p class="empty" id="empty">Type a request and press Run. Each card below is one model call and the real page result it saw.</p>
+  <ol class="steps" id="timeline"></ol>
+  <div class="result" id="result" hidden>
+    <div class="bar"><span>episode json</span><button id="copy" type="button">Copy</button></div>
+    <pre id="json"></pre>
+  </div>
+  <section class="md" id="mdpanel" hidden>
+    <div class="bar">
+      <span>markdown</span>
+      <button id="mdsource" type="button">Source</button>
+      <button id="mdcopy" type="button">Copy</button>
+    </div>
+    <div class="body" id="mdbody"></div>
+    <pre id="mdsrc" hidden></pre>
+  </section>
+  <section class="links" id="linkspanel" hidden>
+    <div class="bar"><span id="linkstitle">links</span></div>
+    <div class="rows" id="linkrows"></div>
+    <div class="pager" id="linkpager">
+      <button id="lprev" type="button">Prev</button>
+      <span id="lpage"></span>
+      <button id="lnext" type="button">Next</button>
+      <span id="lcount"></span>
+    </div>
+  </section>
+  <p class="note">Same code path as the CLI: <code>node runtime/agent4.js "&lt;request&gt;"</code>.
+    The page never invents a result - every observation above came from the browser that just ran.</p>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+function currentModel() {
+  const sel = $("model");
+  const opt = sel.selectedOptions && sel.selectedOptions[0];
+  return { lane: sel.value, name: opt ? opt.textContent.trim() : sel.value };
+}
+const EXAMPLES = [
+  "go to example.com and give me the data",
+  "images of cape town on wikipedia",
+  "what are the uefa fixtures today",
+  "scrape github.com for links",
+  "get the headings from the polars docs",
+  "tell me a joke",
+];
+let es = null, t0 = 0, timer = null;
+const LIMIT = 200;
+
+function setStatus(text, state) {
+  $("status").textContent = text;
+  $("dot").className = "dot" + (state ? " " + state : "");
+}
+function pretty(raw) {
+  try { return JSON.stringify(JSON.parse(raw), null, 2); } catch (e) { return raw; }
+}
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+function folded(label, open, cls) {
+  const d = el("details", cls);
+  d.open = open;
+  d.append(el("summary", null, label));
+  return d;
+}
+const collapsed = () => $("collapse").checked;
+// The one-line preview on a collapsed call: the tool plus the argument that matters.
+function brief(raw) {
+  try {
+    const c = JSON.parse(raw);
+    if (c.tool === "goto") return c.url || "";
+    if (c.tool === "search") return '"' + (c.q || "") + '"';
+    if (c.tool === "extract") {
+      const f = Array.isArray(c.fields) ? c.fields.join(", ") : (c.fields || "");
+      return f + (c.find ? `, find "${c.find}"` : "");
+    }
+    if (c.tool === "fail") return c.reason || "";
+    if (c.tool === "done") return "finished";
+    return "";
+  } catch (e) {
+    return raw;
+  }
+}
+function addStep(ev) {
+  const li = el("li");
+  const box = el("details", "step");
+  box.open = !collapsed();
+  const head = el("summary", "stephead");
+  head.append(el("span", "caret", "\u25B6"));
+  head.append(el("span", "n", String(ev.index + 1).padStart(2, "0")));
+  let tool = "call";
+  try { tool = JSON.parse(ev.call).tool || "call"; } catch (e) { tool = "invalid"; }
+  head.append(el("span", "tool" + (tool === "done" ? " done" : tool === "fail" ? " fail" : ""), tool));
+  head.append(el("span", "preview", brief(ev.call)));
+  head.append(el("span", "state", ""));
+  head.append(el("span", "ms", ev.model_ms + " ms"));
+  const body = el("div", "body");
+  body.append(el("pre", null, pretty(ev.call)));
+  box.append(head, body);
+  li.append(box);
+  li.dataset.index = ev.index;
+  $("timeline").append(li);
+}
+function addObs(ev) {
+  const li = $("timeline").querySelector(`li[data-index="${ev.index}"]`);
+  if (!li) return;
+  const bad = /^error/.test(ev.obs);
+  const state = li.querySelector(".state");
+  if (state) { state.textContent = bad ? "error" : "ok"; state.className = "state " + (bad ? "err" : "good"); }
+  const body = li.querySelector(".body");
+  if (!body) return;
+  const obs = el("div", "obs" + (bad ? " err" : ""));
+  obs.append(document.createTextNode(ev.obs));
+  if (ev.url) {
+    obs.append(document.createTextNode("  "));
+    const a = el("a", null, ev.url);
+    a.href = ev.url; a.target = "_blank"; a.rel = "noopener";
+    obs.append(a);
+  }
+  body.append(obs);
+  if (ev.data && Object.keys(ev.data).length) {
+    // the output stays open: that is the answer the run produced
+    const d = folded("output", true, "data");
+    d.append(el("pre", null, JSON.stringify(ev.data, null, 1)));
+    body.append(d);
+  }
+}
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function inlineMd(s) {
+  return esc(s)
+    .replace(/\{\{pill:(ok|err):([^}]*)\}\}/g, (m, cls, txt) => `<span class="pill ${cls}">${txt}</span>`)
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
+// Small renderer for the markdown this page generates: headings, lists, paragraphs, code.
+function renderMd(md) {
+  const html = [];
+  let list = null, code = null;
+  const closeList = () => { if (list) { html.push(`</${list}>`); list = null; } };
+  for (const line of md.split("\n")) {
+    if (line.startsWith("```")) {
+      if (code === null) { closeList(); code = []; }
+      else { html.push("<pre>" + esc(code.join("\n")) + "</pre>"); code = null; }
+      continue;
+    }
+    if (code !== null) { code.push(line); continue; }
+    if (!line.trim()) { closeList(); continue; }
+    const h = line.match(/^(#{1,3})\s+(.*)$/);
+    if (h) { closeList(); html.push(`<h${h[1].length}>${inlineMd(h[2])}</h${h[1].length}>`); continue; }
+    const ol = line.match(/^\s*\d+\.\s+(.*)$/);
+    if (ol) {
+      if (list !== "ol") { closeList(); html.push("<ol>"); list = "ol"; }
+      html.push(`<li>${inlineMd(ol[1])}</li>`);
+      continue;
+    }
+    const ul = line.match(/^\s*[-*]\s+(.*)$/);
+    if (ul) {
+      if (list !== "ul") { closeList(); html.push("<ul>"); list = "ul"; }
+      html.push(`<li>${inlineMd(ul[1])}</li>`);
+      continue;
+    }
+    closeList();
+    html.push(`<p>${inlineMd(line)}</p>`);
+  }
+  closeList();
+  if (code !== null) html.push("<pre>" + esc(code.join("\n")) + "</pre>");
+  return html.join("");
+}
+function clip(s, n) { return s.length > n ? s.slice(0, n - 1).trimEnd() + "..." : s; }
+// Bare urls inside an observation become markdown links, so the page can be followed.
+function linkify(text) {
+  return text.replace(/https?:\/\/[^\s)]+/g, (u) => {
+    const label = u.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    return `[${label}](${u})`;
+  });
+}
+function oneItem(v) {
+  if (v === null || v === undefined) return "none";
+  if (typeof v === "string") return linkify(clip(v, 110));
+  if (typeof v === "object") {
+    if (v.href) return `[${clip(v.text || v.href, 60)}](${v.href})`;
+    if (v.src) return `[${clip(v.alt || "image", 60)}](${v.src})`;
+    return clip(JSON.stringify(v), 110);
+  }
+  return String(v);
+}
+function describe(v) {
+  if (Array.isArray(v)) {
+    if (!v.length) return "empty";
+    const bits = v.slice(0, 3).map(oneItem);
+    return `${v.length} item${v.length === 1 ? "" : "s"}: ` + bits.join("; ") +
+      (v.length > 3 ? `; and ${v.length - 3} more` : "");
+  }
+  return oneItem(v);
+}
+// The episode as a readable markdown report, built from the same real steps.
+function toMarkdown(ep) {
+  const { request, ended, steps, total_ms, data } = ep;
+  const modelMs = steps.reduce((a, s) => a + (s.model_ms || 0), 0);
+  const state = ended === "done" ? "ok" : "err";
+  const out = [];
+  out.push(`# ${request}`, "");
+  out.push(`**Model** \`${currentModel().name}\` {{pill:${state}:${ended}}} after ${steps.length} ` +
+    `${steps.length === 1 ? "call" : "calls"} in ${(total_ms / 1000).toFixed(1)} s, ` +
+    `${modelMs} ms of model time.`, "");
+  out.push("## Steps", "");
+  steps.forEach((s, i) => {
+    let tool = "call", arg = "";
+    try {
+      const c = JSON.parse(s.call);
+      tool = c.tool || "call";
+      arg = brief(s.call);
+    } catch (e) { arg = clip(s.call, 60); }
+    let line = `${i + 1}. **${tool}**` + (arg ? ` \`${arg}\`` : "") + ` - ${s.model_ms} ms`;
+    if (s.obs) {
+      const bad = /^error/.test(s.obs);
+      line += ` - {{pill:${bad ? "err" : "ok"}:${bad ? "error" : "ok"}}} ${linkify(clip(s.obs, 150))}`;
+      if (s.url && s.url !== arg) line += ` ([page](${s.url}))`;
+    }
+    out.push(line);
+  });
+  if (data && Object.keys(data).length) {
+    out.push("", "## Output", "");
+    for (const [k, v] of Object.entries(data)) out.push(`- **${k}:** ${describe(v)}`);
+  }
+  return out.join("\n");
+}
+function showMarkdown(ep) {
+  const md = toMarkdown(ep);
+  $("mdbody").innerHTML = renderMd(md);
+  $("mdsrc").textContent = md;
+  $("mdsrc").hidden = true;
+  $("mdbody").hidden = false;
+  $("mdsource").textContent = "Source";
+  $("mdpanel").hidden = false;
+}
+// Every url the run touched: the page after each goto, urls in observations,
+// and the link and image entries in the extracted data.
+const PAGE_SIZE = 10;
+let linkState = { items: [], page: 0 };
+function collectLinks(ep) {
+  const seen = new Set();
+  const out = [];
+  const add = (href, label, kind) => {
+    if (!href || !/^https?:\/\//i.test(href) || seen.has(href)) return;
+    seen.add(href);
+    out.push({ href, label: (label || "").trim(), kind });
+  };
+  ep.steps.forEach((s) => {
+    let tool = "call";
+    try { tool = JSON.parse(s.call).tool || "call"; } catch (e) { /* keep default */ }
+    if (s.url) add(s.url, "page after " + tool, "page");
+    if (s.obs) (s.obs.match(/https?:\/\/[^\s)]+/g) || []).forEach((u) => add(u, "", "search"));
+  });
+  const data = ep.data || {};
+  const walk = (v) => {
+    if (!v) return;
+    if (Array.isArray(v)) return v.forEach((x) => walk(x));
+    if (typeof v !== "object") return;
+    if (v.href) add(v.href, v.text, "link");
+    if (v.src) add(v.src, v.alt, "image");
+    Object.values(v).forEach((x) => { if (x && typeof x === "object") walk(x); });
+  };
+  walk(data);
+  return out;
+}
+function linkRow(link, i) {
+  const a = el("a", "lrow");
+  a.href = link.href;
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.title = link.href;
+  a.append(el("span", "lnum", String(linkState.page * PAGE_SIZE + i + 1)));
+  a.append(el("span", "lkind", link.kind));
+  const text = el("span", "ltext");
+  if (link.label) text.append(el("span", "llabel", link.label));
+  text.append(el("span", "lurl", link.href));
+  a.append(text);
+  return a;
+}
+function renderLinks() {
+  const { items, page } = linkState;
+  const pages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  const slice = items.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
+  const rows = $("linkrows");
+  rows.innerHTML = "";
+  if (!items.length) {
+    rows.append(el("div", "pager", "No links in this run."));
+  } else {
+    slice.forEach((l, i) => rows.append(linkRow(l, i)));
+  }
+  $("linkstitle").textContent = `links ${items.length}`;
+  $("lpage").textContent = `${page + 1} / ${pages}`;
+  $("lcount").textContent = items.length
+    ? `${page * PAGE_SIZE + 1}-${page * PAGE_SIZE + slice.length} of ${items.length}`
+    : "";
+  $("lprev").disabled = page === 0;
+  $("lnext").disabled = page >= pages - 1;
+  $("linkpager").hidden = items.length <= PAGE_SIZE;
+}
+function showLinks(ep) {
+  linkState = { items: collectLinks(ep), page: 0 };
+  renderLinks();
+  $("linkspanel").hidden = false;
+}
+function pageLinks(step) {
+  const pages = Math.max(1, Math.ceil(linkState.items.length / PAGE_SIZE));
+  const next = Math.min(pages - 1, Math.max(0, linkState.page + step));
+  if (next === linkState.page) return;
+  linkState.page = next;
+  renderLinks();
+}
+function finish(ev) {
+  clearInterval(timer);
+  $("run").disabled = false;
+  $("stop").hidden = true;
+  const bad = ev.ended !== "done";
+  const li = el("li", "end" + (bad ? " bad" : ""));
+  const head = el("div", "stephead");
+  head.append(el("span", "caret", ""));
+  head.append(el("span", "n", "end"));
+  head.append(el("span", "tool" + (bad ? " fail" : " done"), ev.ended));
+  head.append(el("span", "preview", ""));
+  head.append(el("span", "ms", ev.total_ms + " ms"));
+  li.append(head);
+  $("timeline").append(li);
+  const { request, ended, steps, total_ms, data } = ev;
+  const picked = currentModel();
+  $("json").textContent = JSON.stringify({ model: picked.name, lane: picked.lane, request, ended, steps, total_ms, data }, null, 2);
+  $("result").hidden = false;
+  showMarkdown(ev);
+  showLinks(ev);
+  setStatus(`${ended} in ${steps.length} calls, ${(total_ms / 1000).toFixed(1)} s`, bad ? "fail" : "done");
+}
+function stop() {
+  if (es) { es.close(); es = null; }
+  clearInterval(timer);
+  $("run").disabled = false;
+  $("stop").hidden = true;
+  setStatus("Stopped by you. Partial steps above are real.", "");
+}
+function run() {
+  const request = $("req").value.trim();
+  if (!request) { $("req").focus(); return; }
+  const unlimited = $("unlimited").checked;
+  let cap = LIMIT;
+  if (!unlimited) {
+    const n = Number($("maxcalls").value.trim());
+    if (!Number.isInteger(n) || n < 1 || n > LIMIT) {
+      setStatus(`Max calls must be a whole number from 1 to ${LIMIT}, or tick Unlimited.`, "fail");
+      $("maxcalls").focus();
+      return;
+    }
+    cap = n;
+  }
+  if (es) es.close();
+  $("timeline").innerHTML = "";
+  $("result").hidden = true;
+  $("mdpanel").hidden = true;
+  $("linkspanel").hidden = true;
+  $("empty").hidden = true;
+  $("run").disabled = true;
+  $("stop").hidden = false;
+  t0 = performance.now();
+  const capText = unlimited ? "no call cap" : `${cap} call cap`;
+  setStatus(`Starting headless Chrome (${capText})...`, "live");
+  timer = setInterval(() => {
+    setStatus(`Running, ${capText}: ${((performance.now() - t0) / 1000).toFixed(1)} s`, "live");
+  }, 250);
+  const q = new URLSearchParams({ request, model: $("model").value, steps: unlimited ? "unlimited" : String(cap) });
+  es = new EventSource("/api/run?" + q);
+  es.onmessage = (m) => {
+    const ev = JSON.parse(m.data);
+    if (ev.type === "start") {
+      setStatus(`Running ${ev.model}, ${ev.unlimited ? "no call cap" : ev.steps + " call cap"}: ${((performance.now() - t0) / 1000).toFixed(1)} s`, "live");
+    }
+    else if (ev.type === "call") addStep(ev);
+    else if (ev.type === "obs") addObs(ev);
+    else if (ev.type === "done") { finish(ev); es.close(); es = null; }
+    else if (ev.type === "error") {
+      clearInterval(timer);
+      $("run").disabled = false; $("stop").hidden = true;
+      setStatus("Error: " + ev.message, "fail");
+      es.close(); es = null;
+    }
+  };
+  es.onerror = () => {
+    if (!es) return;
+    clearInterval(timer);
+    $("run").disabled = false; $("stop").hidden = true;
+    setStatus("Connection to the local server dropped. Is node app/server.js still running?", "fail");
+    es.close(); es = null;
+  };
+}
+$("ask").addEventListener("submit", (e) => { e.preventDefault(); saveSettings(); run(); });
+$("stop").addEventListener("click", stop);
+const SETTINGS_KEY = "marvijo-web-search-bench-settings";
+function saveSettings() {
+  try {
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify({
+      model: $("model").value, maxcalls: $("maxcalls").value,
+      unlimited: $("unlimited").checked, collapse: $("collapse").checked,
+    }));
+  } catch (e) { /* private mode: settings just do not stick */ }
+}
+function applyUnlimited() { $("maxcalls").disabled = $("unlimited").checked; }
+$("unlimited").addEventListener("change", () => { applyUnlimited(); saveSettings(); });
+$("maxcalls").addEventListener("change", saveSettings);
+$("collapse").addEventListener("change", () => {
+  // fold what is already on screen; the output block stays open
+  document.querySelectorAll("#timeline details:not(.data)").forEach((d) => { d.open = !collapsed(); });
+  saveSettings();
+});
+$("copy").addEventListener("click", async () => {
+  await navigator.clipboard.writeText($("json").textContent);
+  $("copy").textContent = "Copied";
+  setTimeout(() => { $("copy").textContent = "Copy"; }, 1200);
+});
+$("mdsource").addEventListener("click", () => {
+  const showingSource = !$("mdsrc").hidden;
+  $("mdsrc").hidden = showingSource;
+  $("mdbody").hidden = !showingSource;
+  $("mdsource").textContent = showingSource ? "Source" : "Rendered";
+});
+$("mdcopy").addEventListener("click", async () => {
+  await navigator.clipboard.writeText($("mdsrc").textContent);
+  $("mdcopy").textContent = "Copied";
+  setTimeout(() => { $("mdcopy").textContent = "Copy"; }, 1200);
+});
+$("lprev").addEventListener("click", () => pageLinks(-1));
+$("lnext").addEventListener("click", () => pageLinks(1));
+EXAMPLES.forEach((x) => {
+  const b = el("button", null, x);
+  b.type = "button";
+  b.addEventListener("click", () => { $("req").value = x; $("req").focus(); });
+  $("examples").append(b);
+});
+fetch("/api/models").then((r) => r.json()).then((list) => {
+  const sel = $("model");
+  sel.innerHTML = "";
+  list.forEach((m) => {
+    const o = el("option", null, m.name);
+    o.value = m.lane;
+    o.title = "marvijo/" + m.name;
+    if (m.lane === "v4-mix2") o.selected = true;
+    sel.append(o);
+  });
+  const champ = list.find((m) => m.lane === "v4-mix2") || list[0];
+  $("meta").innerHTML = "";
+  const facts = [
+    ["checkpoint", champ.name],
+    ["repo", "marvijo/" + champ.name],
+    ["params", champ.params ? (champ.params / 1e6).toFixed(2) + "M" : "2.68M"],
+    ["context", champ.max_len ? champ.max_len + " chars" : "768 chars"],
+  ];
+  facts.forEach(([k, v]) => {
+    const s = el("span");
+    s.append(document.createTextNode(k + " "));
+    s.append(el("b", null, v));
+    $("meta").append(s);
+  });
+  try {
+    const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
+    if (saved.model && list.some((m) => m.lane === saved.model)) sel.value = saved.model;
+    if (typeof saved.maxcalls === "string" && saved.maxcalls.trim()) $("maxcalls").value = saved.maxcalls;
+    if (saved.unlimited !== undefined) $("unlimited").checked = !!saved.unlimited;
+    if (saved.collapse !== undefined) $("collapse").checked = !!saved.collapse;
+  } catch (e) { /* first visit or private mode */ }
+  applyUnlimited();
+}).catch(() => setStatus("Could not list models from the local server.", "fail"));
+</script>
+</html>

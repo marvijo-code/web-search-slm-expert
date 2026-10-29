@@ -1,0 +1,27 @@
+{
+ "train": 200000,
+ "val": 1500,
+ "test_unseen_topics": 600,
+ "test_unseen_phrasings": 600,
+ "seed": 4242,
+ "kinds": {
+  "search": 76674,
+  "url": 64475,
+  "scope": 10693,
+  "recipe": 38697,
+  "no_target": 9461
+ },
+ "episodes_with_a_failure": 0.188,
+ "seq_len_median": 294,
+ "seq_len_p99": 668,
+ "seq_len_max": 768,
+ "calls_per_episode": 3.46
+}
+need yesterday ipl schedule :) <sep> {"tool":"search","q":"ipl schedule yesterday"} <eos> results 1 https://sunny.co.uk/item?id=423248 2 https://www.ink.gov.uk/ipl-yesterday <sep> {"tool":"goto","url":"https://sunny.co.uk/item?id=423248"} <eos> ok 200 text:682 links:1910 images:120 tables:1 <sep> {"tool":"extract","fields":["text"],"find":"yesterday"} <eos> got text:47 <sep> {"tool":"done"} <eos> 
+what are the mls transfers now <sep> {"tool":"search","q":"mls transfers"} <eos> results 1 https://en.mls.co/ 2 https://mls.org.za/2024/02/mls-transfers 3 https://mls.dev/ <sep> {"tool":"goto","url":"https://en.mls.co/"} <eos> ok 200 text:875 links:698 images:48 tables:2 <sep> {"tool":"extract","fields":["text"]} <eos> got text:875 <sep> {"tool":"done"} <eos> 
+task: any the images on https://nation.org <sep> {"tool":"goto","url":"https://nation.org"} <eos> ok 200 text:701 links:0 images:14 tables:0 <sep> {"tool":"extract","fields":["images"]} <eos> got images:14 <sep> {"tool":"done"} <eos> 
+all page name only: black232.gov.za/list/craft.html now <sep> {"tool":"goto","url":"https://black232.gov.za/list/craft.html"} <eos> error timeout <sep> {"tool":"goto","url":"https://black232.gov.za/list/craft.html"} <eos> error 404 <sep> {"tool":"search","q":"black232.gov.za"} <eos> results 1 https://en.gov.edu.au/ <sep> {"tool":"goto","url":"https://en.gov.edu.au/"} <eos> error 404 <sep> {"tool":"fail","reason":"not_found"} <eos> 
+grab new serie a standings for me <sep> {"tool":"search","q":"serie a standings"} <eos> results 1 https://m.seriedaily.biz/tag/a-serie 2 https://www.chat.co.za/fixtures 3 https://www.port-quick.gov.in/p/513076 <sep> {"tool":"goto","url":"https://m.seriedaily.biz/tag/a-serie"} <eos> ok 200 text:466 links:0 images:191 tables:18 <sep> {"tool":"extract","fields":["text"]} <eos> got text:466 <sep> {"tool":"done"} <eos> 
+SCOUT, MESSAGE SALES@FORGE803.CO.ZA THAT I AM LATE <sep> {"tool":"fail","reason":"out_of_scope"} <eos> 
+Agent, find the words on the page of dubai traffic now <sep> {"tool":"search","q":"dubai traffic"} <eos> results 1 https://www.walokusport.org.za/2020/01/traffic-dubai 2 https://en.traffic.ai/item?id=801670 3 https://en.curabo.co.nz/story/927594 <sep> {"tool":"goto","url":"https://www.walokusport.org.za/2020/01/traffic-dubai"} <eos> ok 200 text:58 links:0 images:0 tables:0 <sep> {"tool":"extract","fields":["text"]} <eos> got text:58 <sep> {"tool":"done"} <eos> 
+for a school project, please look up jobs in gqeberha and give me seo info? <sep> {"tool":"search","q":"jobs in gqeberha"} <eos> results 1 https://en.givifihi.org.za/wiki/Gqeberha-In 2 https://m.jobsnow.net/live/ 3 https://en.in.com.ng/tag/gqeberha <sep> {"tool":"goto","url":"https://en.givifihi.org.za/wiki/Gqeberha-In"} <eos> ok 200 text:510 links:1641 images:176 tables:0 <sep> {"tool":"extract","fields":["meta"]} <eos> got meta <sep> {"tool":"done"} <eos> 

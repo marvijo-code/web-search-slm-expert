@@ -1,0 +1,13 @@
+{
+  "name": "marvijo-web-search-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marvijo Web Search inference in plain JavaScript plus a Puppeteer agent",
+  "main": "marvijo-web-search.js",
+  "scripts": {
+    "demo": "node agent.js \"go to example.com and give me the data\""
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.43.1"
+  }
+}

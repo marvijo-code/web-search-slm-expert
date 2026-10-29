@@ -1,0 +1,28 @@
+{
+ "train": 200000,
+ "val": 1500,
+ "test_unseen_topics": 600,
+ "test_unseen_phrasings": 600,
+ "seed": 4242,
+ "copy": 0.4,
+ "kinds": {
+  "search": 75803,
+  "recipe": 40715,
+  "no_target": 9283,
+  "url": 63555,
+  "scope": 10644
+ },
+ "episodes_with_a_failure": 0.189,
+ "seq_len_median": 293,
+ "seq_len_p99": 671,
+ "seq_len_max": 768,
+ "calls_per_episode": 3.46
+}
+task: boheva standings today please thx <sep> {"tool":"search","q":"boheva standings today"} <eos> results 1 https://bread.de/fixtures 2 https://news.standings.com.au/sport/boheva-today 3 https://boheva.uk/story/256148 <sep> {"tool":"goto","url":"https://bread.de/fixtures"} <eos> ok 200 text:518 links:1552 images:163 tables:1 <sep> {"tool":"extract","fields":["text"],"find":"today"} <eos> got text:20 <sep> {"tool":"done"} <eos> 
+task: i want table data/the seo info/the page title of dvfvv fatelo please <sep> {"tool":"search","q":"dvfvv fatelo"} <eos> results 1 https://node.xyz/sport/dvfvv-fatelo <sep> {"tool":"goto","url":"https://node.xyz/sport/dvfvv-fatelo"} <eos> ok 200 text:857 links:976 images:0 tables:43 <sep> {"tool":"extract","fields":["title","meta","tables"]} <eos> got tables:43 <sep> {"tool":"done"} <eos> 
+search wikipedia for lionel messi? <sep> {"tool":"goto","url":"https://en.wikipedia.org/wiki/Lionel_messi"} <eos> ok 200 text:153 links:1882 images:51 tables:0 <sep> {"tool":"extract","fields":["all"]} <eos> got headings:18 text:153 links:1882 images:51 tables:0 <sep> {"tool":"done"} <eos> 
+task: go online and get price of jse top 40 <sep> {"tool":"search","q":"price of jse top 40"} <eos> results 1 https://www.zuluinfo.com.ng/jse-price-of/store 2 https://jse.web.za/news 3 https://news.bread287today.io/sport/price-of-jse <sep> {"tool":"goto","url":"https://www.zuluinfo.com.ng/jse-price-of/store"} <eos> error 404 <sep> {"tool":"goto","url":"https://jse.web.za/news"} <eos> ok 200 text:107 links:660 images:86 tables:0 <sep> {"tool":"extract","fields":["text"]} <eos> got text:107 <sep> {"tool":"done"} <eos> 
+Hi, go to the site and get the raw data :) <sep> {"tool":"fail","reason":"no_target"} <eos> 
+agent, use puppeteer to open KIT.ORG/results/18 and extract the tables <sep> {"tool":"goto","url":"https://kit.org/results/18"} <eos> ok 200 text:303 links:409 images:26 tables:27 <sep> {"tool":"extract","fields":["tables"]} <eos> got tables:27 <sep> {"tool":"done"} <eos> 
+write a python function to sort a list for me <sep> {"tool":"fail","reason":"out_of_scope"} <eos> 
+yo scrape it: http://en.puna.org.za/wiki/bay because i need it for a meeting <sep> {"tool":"goto","url":"http://en.puna.org.za/wiki/bay"} <eos> ok 200 text:587 links:1864 images:137 tables:0 <sep> {"tool":"extract","fields":["all"]} <eos> got headings:43 text:587 links:1864 images:137 tables:0 <sep> {"tool":"done"} <eos> 

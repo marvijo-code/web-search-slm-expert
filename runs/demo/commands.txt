@@ -1,0 +1,20 @@
+# 1. Data: 200,000 synthetic rows plus held-out test sets
+python data/gen_data.py --out data/build_v3-small --train 200000
+
+# 2. Train one size (CPU; the cloud lanes used 4 cores and a 55 minute budget)
+python train.py --data data/build_v3-small --out runs/v3-small --minutes 55 --n-layer 6 --d-model 192 --n-head 6 --d-ff 512 --lr 1e-3 --batch 32
+
+# 3. Score it, then export float16 weights for JavaScript
+python evaluate.py --ckpt runs/v3-small/ckpt.pt --data data/build_v3-small --out runs/v3-small/eval.json
+python export.py --ckpt runs/v3-small/ckpt.pt --out runs/v3-small/weights
+
+# 4. Check JavaScript gives the same numbers as PyTorch
+python tests/parity_dump.py runs/v3-small/ckpt.pt expected.json
+node tests/parity_test.js runs/v3-small/weights expected.json
+
+# 5. Run it: plan with the model, browse with Puppeteer
+cd runtime && npm install
+node agent.js --weights ../runs/v3-small/weights "go to example.com and give me the data"
+
+# 6. Score on the hand-made sets with the shipped JavaScript runtime
+node eval.js --weights ../runs/v3-small/weights --set ../data/final_blind_test.jsonl

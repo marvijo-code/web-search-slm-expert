@@ -1,0 +1,29 @@
+params 2,675,712  train rows 200,000  threads 4
+step 250 loss 0.4493 train_t 7.0m
+{"event": "eval", "step": 250, "t": 424.1, "train_t": 421.6, "val_loss": 0.73707, "val_char_acc": 0.79462}
+step 500 loss 0.3837 train_t 14.8m
+{"event": "eval", "step": 500, "t": 925.3, "train_t": 889.8, "val_loss": 0.42615, "val_char_acc": 0.87688}
+step 750 loss 0.3498 train_t 23.2m
+{"event": "eval", "step": 750, "t": 1459.7, "train_t": 1392.0, "val_loss": 0.16375, "val_char_acc": 0.95068}
+step 1000 loss 0.0529 train_t 31.2m
+{"event": "eval", "step": 1000, "t": 1975.5, "train_t": 1872.5, "val_loss": 0.04499, "val_char_acc": 0.98632, "em_unseen_topics": 0.13, "em_unseen_phrasings": 0.23}
+step 1250 loss 0.0145 train_t 39.0m
+{"event": "eval", "step": 1250, "t": 2551.5, "train_t": 2341.8, "val_loss": 0.02179, "val_char_acc": 0.99346}
+step 1500 loss 0.0131 train_t 47.4m
+{"event": "eval", "step": 1500, "t": 3090.2, "train_t": 2844.7, "val_loss": 0.01599, "val_char_acc": 0.99536}
+step 1750 loss 0.0050 train_t 55.8m
+{"event": "eval", "step": 1750, "t": 3628.0, "train_t": 3350.1, "val_loss": 0.01041, "val_char_acc": 0.99699}
+step 2000 loss 0.0091 train_t 64.3m
+{"event": "eval", "step": 2000, "t": 4165.3, "train_t": 3857.1, "val_loss": 0.00682, "val_char_acc": 0.99799, "em_unseen_topics": 0.26, "em_unseen_phrasings": 0.69}
+step 2250 loss 0.0021 train_t 72.3m
+{"event": "eval", "step": 2250, "t": 4779.3, "train_t": 4339.6, "val_loss": 0.00486, "val_char_acc": 0.9986}
+step 2500 loss 0.0041 train_t 80.0m
+{"event": "eval", "step": 2500, "t": 5268.6, "train_t": 4801.3, "val_loss": 0.00375, "val_char_acc": 0.99899}
+step 2750 loss 0.0006 train_t 88.0m
+{"event": "eval", "step": 2750, "t": 5780.7, "train_t": 5278.2, "val_loss": 0.00296, "val_char_acc": 0.99917}
+{"event": "eval", "step": 2805, "t": 5931.5, "train_t": 5401.1, "val_loss": 0.00283, "val_char_acc": 0.99917, "em_unseen_topics": 0.38, "em_unseen_phrasings": 0.81}
+done 2805 steps
+val                  episode EM 0.9020  step acc 0.9682  first call 0.9560  json 0.9988  108.07 ms/step
+unseen topics        episode EM 0.3883  step acc 0.7943  first call 0.4167  json 0.9976  106.57 ms/step
+unseen phrasings     episode EM 0.7550  step acc 0.9217  first call 0.8367  json 0.9990  97.09 ms/step
+2,675,712 weights -> 5.35 MB

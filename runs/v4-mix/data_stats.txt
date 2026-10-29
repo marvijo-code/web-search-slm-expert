@@ -1,0 +1,29 @@
+{
+ "train": 200000,
+ "val": 1500,
+ "test_unseen_topics": 600,
+ "test_unseen_phrasings": 600,
+ "seed": 4242,
+ "copy": 0.4,
+ "mix": 0.5,
+ "kinds": {
+  "search": 76082,
+  "url": 63538,
+  "scope": 10619,
+  "recipe": 40464,
+  "no_target": 9297
+ },
+ "episodes_with_a_failure": 0.19,
+ "seq_len_median": 296,
+ "seq_len_p99": 673,
+ "seq_len_max": 768,
+ "calls_per_episode": 3.46
+}
+ok can u scoop up what you can find on boheva standings on the web <sep> {"tool":"search","q":"boheva standings"} <eos> results 1 https://sport.gamma682.me/story/908643 <sep> {"tool":"goto","url":"https://sport.gamma682.me/story/908643"} <eos> ok 200 text:222 links:0 images:97 tables:0 <sep> {"tool":"extract","fields":["text"]} <eos> got text:222 <sep> {"tool":"done"} <eos> 
+hey go to play813.online/home-alpha and give me its contents <sep> {"tool":"goto","url":"https://play813.online/home-alpha"} <eos> ok 200 text:829 links:580 images:80 tables:0 <sep> {"tool":"extract","fields":["all"]} <eos> got headings:18 text:829 links:580 images:80 tables:0 <sep> {"tool":"done"} <eos> 
+task: the photo urls only: amazon.com/item please <sep> {"tool":"goto","url":"https://amazon.com/item"} <eos> ok 200 text:626 links:0 images:47 tables:0 <sep> {"tool":"extract","fields":["images"]} <eos> got images:47 <sep> {"tool":"done"} <eos> 
+Hey rate my outfit thx <sep> {"tool":"fail","reason":"out_of_scope"} <eos> 
+quick one: go to en.wikipedia.org/blog?q=link and get the title tag+the og tags+images <sep> {"tool":"goto","url":"https://en.wikipedia.org/blog?q=link"} <eos> ok 200 text:673 links:0 images:69 tables:0 <sep> {"tool":"extract","fields":["title","meta","images"]} <eos> got images:69 <sep> {"tool":"done"} <eos> 
+yo eevrything of amazon.com/@wind4/flow-4009 please <sep> {"tool":"goto","url":"https://amazon.com/@wind4/flow-4009"} <eos> ok 200 text:480 links:913 images:143 tables:0 <sep> {"tool":"extract","fields":["all"]} <eos> got headings:59 text:480 links:913 images:143 tables:0 <sep> {"tool":"done"} <eos> 
+no. <sep> {"tool":"fail","reason":"out_of_scope"} <eos> 
+r/space for me <sep> {"tool":"goto","url":"https://old.reddit.com/r/space/"} <eos> ok 200 text:435 links:959 images:116 tables:0 <sep> {"tool":"extract","fields":["text"]} <eos> got text:435 <sep> {"tool":"done"} <eos> 

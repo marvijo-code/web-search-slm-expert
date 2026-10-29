@@ -1,0 +1,13 @@
+{"train": 200000, "val": 1863, "test_unseen_domains": 1000, "test_unseen_phrasings": 1000, "seed": 1337, "max_input_chars": 280, "train_contains_example": false}
+hi, the page content for https://talklake.edu/page/play for me => {"url":"https://talklake.edu/page/play","extract":["all"]}
+scrape page coursegolden.xyz/about asap => {"url":"https://coursegolden.xyz/about","extract":["all"]}
+task: hey can you grab the page data from https://vuta.tv/EN/Paper/press. => {"url":"https://vuta.tv/EN/Paper/press","extract":["all"]}
+I need all the details on this page: https://gallery-clean.ac.uk/FilmFootball/o6t5CLy9O/pizza-career-4535-gucu-7497-6653-bread/PHOTO for me => {"url":"https://gallery-clean.ac.uk/FilmFootball/o6t5CLy9O/pizza-career-4535-gucu-7497-6653-bread/PHOTO","extract":["all"]}
+go to https://www.career.fr/AzElaF9R2lmeB/5d7275d0d93a91/kit-48076 and get page text,title asap => {"url":"https://www.career.fr/AzElaF9R2lmeB/5d7275d0d93a91/kit-48076","extract":["title","text"]}
+hi, etxract subheadings,links from m.vidije.tv/YG.WWF/ADPWHTME617/Land/ asap => {"url":"https://m.vidije.tv/YG.WWF/ADPWHTME617/Land/","extract":["headings","links"]}
+hey can you scrape https://api.zyyle.co.za/results/bright for me for me => {"url":"https://api.zyyle.co.za/results/bright","extract":["all"]}
+Yo load https://Learn.de/wavemuseum/mumi/vlc8zg11z and return the raw data asap => {"url":"https://learn.de/wavemuseum/mumi/vlc8zg11z","extract":["all"]}
+scrape it: https://spacetalent.site/list/tiger.php please => {"url":"https://spacetalent.site/list/tiger.php","extract":["all"]}
+extract the website data from port109.co.uk/posts => {"url":"https://port109.co.uk/posts","extract":["all"]}
+pull  what it says from the article i sent earlier thanks => {"error":"no_url"}
+page name only. https://blog.sunny.co.za/products :) => {"url":"https://blog.sunny.co.za/products","extract":["title"]}

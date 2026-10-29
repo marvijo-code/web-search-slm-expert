@@ -1,0 +1,13 @@
+{"train": 200000, "val": 1839, "test_unseen_domains": 1000, "test_unseen_phrasings": 1000, "seed": 1337, "max_input_chars": 280, "train_contains_example": false}
+what does talklake.info/careers/6416 have on it for me => {"url":"https://talklake.info/careers/6416","extract":["all"]}
+when you get a sec, yo coursegolden.biz - scrape it asap => {"url":"https://coursegolden.biz","extract":["all"]}
+task: hey can you grab the page data from https://space.tv/EN/Paper/press. => {"url":"https://space.tv/EN/Paper/press","extract":["all"]}
+hey what's on HTTPS://shop.gallery-clean.co.za/docs/6841! => {"url":"https://shop.gallery-clean.co.za/docs/6841","extract":["all"]}
+YO GIVE ME THE OG TAGS+TITLE+THE A TAGS FROM blue.info/page/ => {"url":"https://blue.info/page/","extract":["title","meta","links"]}
+hey go to blue.co and get the page content for me => {"url":"https://blue.co","extract":["all"]}
+the title tag, meta and link urls for [https://clean.me/blog/] :) => {"url":"https://clean.me/blog/","extract":["title","meta","links"]}
+quick one: scrape the words on the page & the subheadings from 0ofo6.ai/results?q=organic => {"url":"https://0ofo6.ai/results?q=organic","extract":["headings","text"]}
+Yo i need the html contents of api.falcon149.dev/products/3299 :) => {"url":"https://api.falcon149.dev/products/3299","extract":["all"]}
+hey find the urls/img tags on factory433.fr asap => {"url":"https://factory433.fr","extract":["links","images"]}
+check 2em.online and give me all urls/the article text/the description tag => {"url":"https://2em.online","extract":["meta","text","links"]}
+set a timer for 5 minutes => {"error":"out_of_scope"}

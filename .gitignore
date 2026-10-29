@@ -1,0 +1,7 @@
+data/build/
+data/build_*/
+runs/*/ckpt.pt
+runs/*/last.pt
+node_modules/
+__pycache__/
+versions/
