@@ -5,6 +5,9 @@ is `marvijo-web-search-1.1-mix2-2.7m` (Hugging Face repo id
 `marvijo/marvijo-web-search-1.1-mix2-2.7m`): 2.68M parameters, float16, runs in plain
 JavaScript on a laptop CPU.
 
+Snapshot names follow `marvijo-web-search-<version>-<recipe>-<params>`, for example
+`marvijo-web-search-1.1-mix2-2.7m`. Every checkpoint, the app and the runtime use that form.
+
 The model does one thing: it reads a request like `go to example.com and give me the data`
 and writes a JSON plan (`{"url":"https://example.com","extract":["all"]}`), or in v4 one
 tool call at a time, which a Puppeteer script runs to pull the page contents.
