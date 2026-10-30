@@ -26,7 +26,7 @@ Background notes: `docs/research.md`. Results: `RESULTS.md`.
 ## Test it in a browser
 
 ```
-cd scoutlm
+cd web-search-slm-expert
 node app/server.js                  # then open http://127.0.0.1:8770
 ```
 
